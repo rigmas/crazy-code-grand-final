@@ -14,7 +14,7 @@ app.get('/qr/generate', async (req, res) => {
   try {
     const { text } = req.query;
     
-    // Generate QR code data as a PNG image
+    // Generate QR code 
     const qrCodeDataUrl = await QRCode.toDataURL(text || '1');
 
     console.log({ qrCodeDataUrl })

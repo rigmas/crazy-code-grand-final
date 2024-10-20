@@ -36,7 +36,7 @@ export default {
 
         codeReader.decodeFromVideoElement(videoElement, (result, error) => {
           if (result) {
-            this.result = result.text; // QR code data is stored in result.text
+            this.result = result.text; // QR code data 
           }
         });
       } catch (err) {
