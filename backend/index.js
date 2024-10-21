@@ -1,32 +1,32 @@
 require('dotenv').config();
 
 const express = require('express');
-const QRCode = require('qrcode');
+const cors = require('cors');
+// const QRCode = require('qrcode');
+const qrControllers = require('./controllers/qr');
 
 const app = express();
+app.use(cors());
+app.use(express.json());
+
 const port = process.env.PORT || 8989;
 
 app.get('/', (req, res) => {
   res.send('Test, samuel!');
 });
 
-app.get('/qr/generate', async (req, res) => {
-  try {
-    const { text } = req.query;
-    
-    // Generate QR code 
-    const qrCodeDataUrl = await QRCode.toDataURL(text || '1');
+app.get('/api/qr/generate', async (req, res) => {
+  qrControllers.generate(req)
+    .then(resp => res.status(200).json(resp))
+    .catch(err => res.status(500).json(err))
+})
 
-    console.log({ qrCodeDataUrl })
-
-    res.json({
-      qrCodeUrl: qrCodeDataUrl
-    });
-  } catch (error) {
-    console.log({ error })
-    res.status(500).json({ error: 'Failed to generate QR code' });
-  }
-});
+app.post('/api/qr/scan', async (req, res) => {
+  console.log(req)
+  qrControllers.scan(req)
+    .then(resp => res.status(200).json(resp))
+    .catch(err => res.status(500).json(err))
+})
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
