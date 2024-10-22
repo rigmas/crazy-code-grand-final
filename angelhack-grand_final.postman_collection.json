@@ -1,0 +1,475 @@
+{
+	"info": {
+		"_postman_id": "2b25a0eb-f328-4976-b09f-b944b0b9463d",
+		"name": "angelhack-grand_final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12543856"
+	},
+	"item": [
+		{
+			"name": "QR - generate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/api/qr/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"qr",
+						"generate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "QR - generate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8989/api/qr/generate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"api",
+								"qr",
+								"generate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1352"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"548-Xt/0Xr1sreE5g7+Tay+aNsZf21c\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Oct 2024 17:10:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"QR code generated successfully\",\n    \"data\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAYAAABRRIOnAAAAAklEQVR4AewaftIAAAN2SURBVO3BO65jSwIDwWRB+99yThvPoFXAgaTbn2FE/IWZ/xxmymGmHGbKYaYcZsphphxmymGmHGbKYaYcZsphphxmymGmHGbKizcl4SepfFISmspNEm5UWhJ+kso7DjPlMFMOM+XFh6l8UhJukvAOlZaEG5WWhCdUPikJn3SYKYeZcpgpL74sCU+ovEPlk1RaEprKO5LwhMo3HWbKYaYcZsqLf1wSmsqNyo1KS0JT+ZsdZsphphxmyou/nEpLwhNJaCo3SfiXHWbKYaYcZsqLL1P5nVRuVN6h8g6VP8lhphxmymGmvPiwJPykJDSVloSm0pLQVFoSmkpLQlO5ScKf7DBTDjPlMFNevEnl/0kSnlD5mxxmymGmHGZK/IU3JKGpfFISmkpLwo3KT0rCjcpNEp5Q+aTDTDnMlMNMefEmlZaEJ1RaEppKS8KNyhNJuFG5SUJTuUnCjUpLQlP5psNMOcyUw0x58aYkNJWWhJskNJWWhKbSknCThKbyRBJuVFoSblSeUGlJuFF5x2GmHGbKYabEX/iNktBUfqckNJWbJLxDpSWhqbQk3Ki84zBTDjPlMFNefFgSmkpLQlNpSbhRaUloKi0JTaUl4Ykk3Ki0JHySyjcdZsphphxmyos3JeEJlZaEG5WWhKZyo3Kj8k0qLQk3Ki0JTeWbDjPlMFMOM+XFh6l8UhJukvBJKu9Iwo1KS0JTaSotCTcq7zjMlMNMOcyUF1+WhKZyo3KThKbyRBKayhMq70hCU2lJ+J0OM+UwUw4z5cWXqbQkNJWbJPxJkvBJSfiTHGbKYaYcZkr8hb9YEm5UbpLwhEpLQlN5IglPqHzTYaYcZsphprx4UxJ+kkpTaUloSbhR+aYkNJVPSkJTecdhphxmymGmvPgwlU9KwhMqTyThRqUl4QmVJ1RuktBUPukwUw4z5TBTXnxZEp5QeUcSmsoTKi0JTyThk5Lwkw4z5TBTDjPlxT8uCU2lqTyhcpOEG5UnVG6S0FTecZgph5lymCkv/jEqN0m4UWkqN0loKjdJaCotCTcq33SYKYeZcpgpL75M5XdKwo3KTRKayk9S+UmHmXKYKYeZ8uLDkvCTknCj8kQSPikJTaUloan8ToeZcpgph5kSf2HmP4eZcpgph5lymCmHmXKYKYeZcpgph5lymCmHmXKYKYeZcpgph5nyPwethgTZFHPBAAAAAElFTkSuQmCC\"\n}"
+				}
+			]
+		},
+		{
+			"name": "QR - scan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"samueelgrs@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/api/qr/scan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"qr",
+						"scan"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "QR - scan",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"samueelgrs@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8989/api/qr/scan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"api",
+								"qr",
+								"scan"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "280"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"118-wqZDD1WtIIBxl7LlNiyAQjfLKLE\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Oct 2024 17:11:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"QR code scanned successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"samuel\",\n        \"email\": \"samueelgrs@gmail.com\",\n        \"room_number\": \"1A03\",\n        \"user_personality_id\": null,\n        \"check_in_date\": \"2024-10-22T05:00:00.000Z\",\n        \"check_out_date\": \"2024-10-26T07:00:00.000Z\",\n        \"created_at\": \"2024-10-22T15:38:23.985Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Quiz - list questions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/api/quiz/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"quiz",
+						"questions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Quiz - list questions",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8989/api/quiz/questions?types=personality",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"api",
+								"quiz",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "personality"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3174"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c66-HlkU7rUSL65LI9c1qhxnEakAsQQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Oct 2024 16:43:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"List questions\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"question\": \"What kind of adventure would excite you the most?\",\n            \"types\": \"personality\",\n            \"created_at\": \"2024-10-22T16:19:50.553Z\",\n            \"answers\": [\n                {\n                    \"id\": 1,\n                    \"answer\": \"Soaring like an eagle over breathtaking landscapes\",\n                    \"options\": \"A\",\n                    \"quiz_question_id\": 1\n                },\n                {\n                    \"id\": 2,\n                    \"answer\": \"Working together like bees to build something extraordinary\",\n                    \"options\": \"B\",\n                    \"quiz_question_id\": 1\n                },\n                {\n                    \"id\": 3,\n                    \"answer\": \"Quietly observing like a wise owl, taking in all the details\",\n                    \"options\": \"C\",\n                    \"quiz_question_id\": 1\n                },\n                {\n                    \"id\": 4,\n                    \"answer\": \"Frolicking like playful dolphins in a social sea of friends\",\n                    \"options\": \"D\",\n                    \"quiz_question_id\": 1\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"question\": \"If you were planning a day with your pack, what role would you take?\",\n            \"types\": \"personality\",\n            \"created_at\": \"2024-10-22T16:19:50.555Z\",\n            \"answers\": [\n                {\n                    \"id\": 5,\n                    \"answer\": \"Leading like a lion, setting the pace for a wild adventure\",\n                    \"options\": \"A\",\n                    \"quiz_question_id\": 2\n                },\n                {\n                    \"id\": 6,\n                    \"answer\": \"Organizing like a diligent ant, making sure everything runs smoothly\",\n                    \"options\": \"B\",\n                    \"quiz_question_id\": 2\n                },\n                {\n                    \"id\": 7,\n                    \"answer\": \"Offering wisdom like a thoughtful tortoise, guiding with insight\",\n                    \"options\": \"C\",\n                    \"quiz_question_id\": 2\n                },\n                {\n                    \"id\": 8,\n                    \"answer\": \"Spreading joy like a monkey, keeping everyone laughing and engaged\",\n                    \"options\": \"D\",\n                    \"quiz_question_id\": 2\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"question\": \"You’re invited to a party. What’s your natural instinct?\",\n            \"types\": \"personality\",\n            \"created_at\": \"2024-10-22T16:19:50.555Z\",\n            \"answers\": [\n                {\n                    \"id\": 9,\n                    \"answer\": \"Scout the scene like a curious fox, always looking for hidden gems\",\n                    \"options\": \"A\",\n                    \"quiz_question_id\": 3\n                },\n                {\n                    \"id\": 10,\n                    \"answer\": \"Gather your crew like a wolf, because fun is better with a team\",\n                    \"options\": \"B\",\n                    \"quiz_question_id\": 3\n                },\n                {\n                    \"id\": 11,\n                    \"answer\": \"Perch quietly like a cat, observing before making a move\",\n                    \"options\": \"C\",\n                    \"quiz_question_id\": 3\n                },\n                {\n                    \"id\": 12,\n                    \"answer\": \"Bounce around like a kangaroo, meeting as many people as possible\",\n                    \"options\": \"D\",\n                    \"quiz_question_id\": 3\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"question\": \"What’s your favorite way to relax after a long day?\",\n            \"types\": \"personality\",\n            \"created_at\": \"2024-10-22T16:19:50.555Z\",\n            \"answers\": [\n                {\n                    \"id\": 13,\n                    \"answer\": \"Stretching out in the sun like a panther, basking in the quiet\",\n                    \"options\": \"A\",\n                    \"quiz_question_id\": 4\n                },\n                {\n                    \"id\": 14,\n                    \"answer\": \"Building a cozy den like a beaver, working on a side project\",\n                    \"options\": \"B\",\n                    \"quiz_question_id\": 4\n                },\n                {\n                    \"id\": 15,\n                    \"answer\": \"Perched in a tree like an owl, reflecting on the day’s adventures\",\n                    \"options\": \"C\",\n                    \"quiz_question_id\": 4\n                },\n                {\n                    \"id\": 16,\n                    \"answer\": \"Swimming with friends like a dolphin, unwinding with good company\",\n                    \"options\": \"D\",\n                    \"quiz_question_id\": 4\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"question\": \"If you were an animal, what would your perfect hangout spot be?\",\n            \"types\": \"personality\",\n            \"created_at\": \"2024-10-22T16:19:50.556Z\",\n            \"answers\": [\n                {\n                    \"id\": 17,\n                    \"answer\": \"At the top of a mountain like a goat, taking in the view\",\n                    \"options\": \"A\",\n                    \"quiz_question_id\": 5\n                },\n                {\n                    \"id\": 18,\n                    \"answer\": \"In a buzzing hive like a bee, collaborating on something creative\",\n                    \"options\": \"B\",\n                    \"quiz_question_id\": 5\n                },\n                {\n                    \"id\": 19,\n                    \"answer\": \"High in the treetops like a sloth, chilling with a book\",\n                    \"options\": \"C\",\n                    \"quiz_question_id\": 5\n                },\n                {\n                    \"id\": 20,\n                    \"answer\": \"In the open savanna like a zebra, always surrounded by your herd\",\n                    \"options\": \"D\",\n                    \"quiz_question_id\": 5\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Quiz - submit answer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1,\n    \"quiz_question_id\": 2,\n    \"quiz_answer_id\": 6\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/api/quiz/answers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"quiz",
+						"answers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Quiz - submit answer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"quiz_question_id\": 2,\n    \"quiz_answer_id\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8989/api/quiz/answers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"api",
+								"quiz",
+								"answers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "136"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"88-gfjvzarxPAx68/h8JFn1PCALzhE\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Oct 2024 16:46:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Submit answers\",\n    \"data\": {\n        \"id\": 2,\n        \"user_id\": 1,\n        \"quiz_question_id\": 2,\n        \"quiz_answer_id\": 6,\n        \"created_at\": \"2024-10-22T16:46:58.290Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Quiz - Get result",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1,\n    \"types\": \"personality\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/api/quiz/result",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"quiz",
+						"result"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Quiz - Get result",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"types\": \"personality\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8989/api/quiz/result",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"api",
+								"quiz",
+								"result"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-c0Nf/LS/y3WWA0OGupNTwOdt+fI\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Oct 2024 17:10:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Get result\",\n    \"data\": \"Extrovert\"\n}"
+				}
+			]
+		}
+	]
+}
