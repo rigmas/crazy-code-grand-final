@@ -9,11 +9,12 @@
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "test": "vitest",
-    "up": "taze major -I",
-    "postinstall": "npx simple-git-hooks"
+    "up": "taze major -I"
   },
   "dependencies": {
+    "@iconify-json/solar": "^1.2.1",
     "@vueuse/core": "^11.0.3",
+    "mind-ar": "^1.2.5",
     "vue": "^3.5.3",
     "vue-router": "^4.4.3"
   },
@@ -33,8 +34,8 @@
     "jsdom": "^25.0.0",
     "lint-staged": "^15.2.10",
     "maplibre-gl": "^4.7.1",
+    "pinia": "^2.2.4",
     "pnpm": "^9.9.0",
-    "simple-git-hooks": "^2.11.1",
     "taze": "^0.16.7",
     "typescript": "^5.5.4",
     "unocss": "^0.62.3",
@@ -42,14 +43,9 @@
     "unplugin-vue-components": "^0.27.4",
     "unplugin-vue-macros": "^2.11.8",
     "unplugin-vue-router": "^0.10.7",
+    "vant": "^4.9.8",
     "vite": "^5.4.3",
     "vitest": "^2.0.5",
     "vue-tsc": "^2.1.6"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
   }
 }

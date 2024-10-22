@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Welcome to the homepage</h1>
+    <h1>Hi, user</h1>
     <div class="flex gap-4">
       <button>
         <a href="/qr">qr</a>
