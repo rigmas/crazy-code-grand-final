@@ -1,0 +1,1 @@
+INSERT INTO users (name, email, room_number, check_in_date, check_out_date) VALUES ('samuel', 'samueelgrs@gmail.com', '1A03', '2024-10-22 12:00:00+08', '2024-10-26 14:00:00+08');
