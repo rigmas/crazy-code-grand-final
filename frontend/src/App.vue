@@ -5,7 +5,7 @@ const overlay = useOverlay()
 </script>
 
 <template>
-  <VanConfigProvider theme="dark" class="h-full w-full">
+  <VanConfigProvider class="h-full w-full">
     <VanOverlay :show="overlay.visible">
       <div class="h-full w-full flex items-center justify-center">
         <div class="rounded-lg px-3 py-3" style="background-color: var(--van-background);">
