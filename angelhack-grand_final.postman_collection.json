@@ -192,16 +192,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8989/api/quiz/questions",
-					"protocol": "http",
+					"raw": "https://crazy-code.samuelgrs.com/api/quiz/questions?types=personality",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"crazy-code",
+						"samuelgrs",
+						"com"
 					],
-					"port": "8989",
 					"path": [
 						"api",
 						"quiz",
 						"questions"
+					],
+					"query": [
+						{
+							"key": "types",
+							"value": "personality"
+						}
 					]
 				}
 			},
@@ -280,7 +287,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user_id\": 1,\n    \"quiz_question_id\": 2,\n    \"quiz_answer_id\": 6\n}",
+					"raw": "{\n    \"user_id\": 1,\n    \"quiz_question_id\": 5,\n    \"quiz_answer_id\": 17\n}",
 					"options": {
 						"raw": {
 							"language": "json"
