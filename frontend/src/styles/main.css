@@ -1,3 +1,5 @@
+@import "@fontsource-variable/sen/index.css";
+
 html,
 body,
 #app {
@@ -5,6 +7,7 @@ body,
   margin: 0;
   padding: 0;
   background-color: #fafafa;
+  font-family: "Sen Variable", "sans-serif";
 }
 
 :root {
