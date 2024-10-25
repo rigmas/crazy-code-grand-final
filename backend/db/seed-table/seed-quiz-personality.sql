@@ -25,46 +25,46 @@ INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_
 
 -- SEED ANSWERS QUESTION 2
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (5, 'Leading like a lion, setting the pace for a wild adventure', 'A', 2, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (5, 'Leading like a lion, setting the pace for a wild adventure', 'A', 2, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (6, 'Organizing like a diligent ant, making sure everything runs smoothly', 'B', 2, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (6, 'Organizing like a diligent ant, making sure everything runs smoothly', 'B', 2, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (7, 'Offering wisdom like a thoughtful tortoise, guiding with insight', 'C', 2, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (7, 'Offering wisdom like a thoughtful tortoise, guiding with insight', 'C', 2, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (8, 'Spreading joy like a monkey, keeping everyone laughing and engaged', 'D', 2, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (8, 'Spreading joy like a monkey, keeping everyone laughing and engaged', 'D', 2, CURRENT_TIMESTAMP);
 
 
 -- SEED ANSWERS QUESTION 3
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (9, 'Scout the scene like a curious fox, always looking for hidden gems', 'A', 3, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (9, 'Scout the scene like a curious fox, always looking for hidden gems', 'A', 3, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (10, 'Gather your crew like a wolf, because fun is better with a team', 'B', 3, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (10, 'Gather your crew like a wolf, because fun is better with a team', 'B', 3, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (11, 'Perch quietly like a cat, observing before making a move', 'C', 3, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (11, 'Perch quietly like a cat, observing before making a move', 'C', 3, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (12, 'Bounce around like a kangaroo, meeting as many people as possible', 'D', 3, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (12, 'Bounce around like a kangaroo, meeting as many people as possible', 'D', 3, CURRENT_TIMESTAMP);
 
 
 -- SEED ANSWERS QUESTION 4
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (13, 'Stretching out in the sun like a panther, basking in the quiet', 'A', 4, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (13, 'Stretching out in the sun like a panther, basking in the quiet', 'A', 4, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (14, 'Building a cozy den like a beaver, working on a side project', 'B', 4, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (14, 'Building a cozy den like a beaver, working on a side project', 'B', 4, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (15, 'Perched in a tree like an owl, reflecting on the day’s adventures', 'C', 4, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (15, 'Perched in a tree like an owl, reflecting on the day’s adventures', 'C', 4, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (16, 'Swimming with friends like a dolphin, unwinding with good company', 'D', 4, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (16, 'Swimming with friends like a dolphin, unwinding with good company', 'D', 4, CURRENT_TIMESTAMP);
 
 
 -- SEED ANSWERS QUESTION 5
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (17, 'At the top of a mountain like a goat, taking in the view', 'A', 5, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (17, 'At the top of a mountain like a goat, taking in the view', 'A', 5, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (18, 'In a buzzing hive like a bee, collaborating on something creative', 'B', 5, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (18, 'In a buzzing hive like a bee, collaborating on something creative', 'B', 5, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (19, 'High in the treetops like a sloth, chilling with a book', 'C', 5, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (19, 'High in the treetops like a sloth, chilling with a book', 'C', 5, CURRENT_TIMESTAMP);
 
-INSERT INTO master_quiz_answers (answer, options, quiz_question_id, created_at) VALUES (20, 'In the open savanna like a zebra, always surrounded by your herd', 'D', 5, CURRENT_TIMESTAMP);
+INSERT INTO master_quiz_answers (id, answer, options, quiz_question_id, created_at) VALUES (20, 'In the open savanna like a zebra, always surrounded by your herd', 'D', 5, CURRENT_TIMESTAMP);
 
 
 
