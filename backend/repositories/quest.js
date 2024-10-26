@@ -36,3 +36,36 @@ exports.insertQuest = async (
     throw err;
   }
 };
+
+exports.updateMindFile = async (questId, mindFilePath) => {
+  try {
+    const res = await db.query(
+      `
+      UPDATE quests
+      SET mind_file = $1
+      WHERE id = $2
+      RETURNING *
+      `,
+      [mindFilePath, questId]
+    );
+    return res.rows[0];
+  } catch (err) {
+    throw err;
+  }
+}
+
+exports.getQuestMindFilePath = async (questId) => {
+  try {
+    const res = await db.query(
+      `
+      SELECT mind_file
+      FROM quests
+      WHERE id = $1
+      `,
+      [questId]
+    );
+    return res.rows[0];
+  } catch (err) {
+    throw err;
+  }
+}
