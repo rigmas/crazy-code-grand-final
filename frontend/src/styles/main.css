@@ -1,7 +1,93 @@
+@import "@fontsource-variable/sen/wght.css";
+@import "@fontsource-variable/sen/index.css";
+
+
 html,
 body,
 #app {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #fafafa;
+  font-family: "Sen Variable", "sans-serif";
+}
+
+:root {
+  --van-primary-color: #ec5107;
+  --van-cc-black: #000;
+  --van-cc-white: #fff;
+  --van-cc-gray-1: #f7f8fa;
+  --van-cc-gray-2: #f2f3f5;
+  --van-cc-gray-3: #ebedf0;
+  --van-cc-gray-4: #dcdee0;
+  --van-cc-gray-5: #c8c9cc;
+  --van-cc-gray-6: #969799;
+  --van-cc-gray-7: #646566;
+  --van-cc-gray-8: #323233;
+  --van-cc-blue: #1989fa;
+  --van-cc-green: #07c160;
+  --van-cc-purple: #8e69d3;
+  --van-cc-padding: 32px;
+  --van-cc-row-max-width: 1680px;
+  --van-cc-nav-width: 220px;
+  --van-cc-border-radius: 20px;
+  --van-cc-simulator-width: 360px;
+  --van-cc-simulator-height: 620px;
+  --van-cc-header-top-height: 64px;
+}
+
+.van-theme-dark {
+  --van-primary-color: rgba(236, 81, 7, 0.8);
+  --van-cc-text-color-1: var(--van-cc-white);
+  --van-cc-text-color-2: rgba(255, 255, 255, .9);
+  --van-cc-text-color-3: rgba(255, 255, 255, .75);
+  --van-cc-text-color-4: rgba(255, 255, 255, .6);
+  --van-cc-link-color: #1bb5fe;
+  --van-cc-background: #202124;
+  --van-cc-background-2: rgba(255, 255, 255, .06);
+  --van-cc-background-3: rgba(255, 255, 255, .1);
+  --van-cc-header-background: rgba(1, 31, 60, .3);
+  --van-cc-border-color: #3a3a3c;
+  --van-cc-code-color: rgba(200, 200, 200, .85);
+  --van-cc-code-comment-color: var(--van-cc-gray-7);
+  --van-cc-code-background: rgba(0, 0, 0, .24);
+  --van-cc-blockquote-color: #bae6fd;
+  --van-cc-blockquote-background: rgba(7, 89, 133, .25);
+}
+
+
+.bg-base {
+  background-color: var(--van-cc-white);
+  color: var(--van-cc-text-color-1);
+}
+
+.bg-base-100 {
+  background-color: #f5f5f5;
+  color: black;
+}
+
+
+.text-primary {
+  --un-text-opacity: 1;
+  color: var(--van-primary-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--van-primary-color);
+}
+
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: var(--van-primary-color);
+  opacity: 0.75;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
 }

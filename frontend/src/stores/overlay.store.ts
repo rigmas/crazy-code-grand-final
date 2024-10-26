@@ -17,10 +17,19 @@ export const useOverlay = defineStore("overlayStore", () => {
 
     visible.value = true
   }
-  const hide = () => { visible.value = false }
+  const hide = () => {
+    visible.value = false
+  }
   const setMessage = (msg: string) => {
     message.value = msg
   }
 
-  return { visible, message, showSpinner, show, hide, setMessage }
+  return {
+    visible,
+    message,
+    showSpinner,
+    show,
+    hide,
+    setMessage,
+  }
 })
