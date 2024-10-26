@@ -11,7 +11,6 @@ import VueMacros from "unplugin-vue-macros/vite"
 import { VueRouterAutoImports } from "unplugin-vue-router"
 import VueRouter from "unplugin-vue-router/vite"
 import { defineConfig } from "vite"
-import { viteVConsole } from "vite-plugin-vconsole"
 
 export default defineConfig({
   resolve: {
@@ -38,17 +37,17 @@ export default defineConfig({
       },
     }),
 
-    viteVConsole({
-      entry: path.resolve("src/main.ts"),
-      localEnabled: true,
-      enabled: true,
-      config: {
-        log: {
-          maxLogNumber: 1000,
-        },
-        theme: "dark",
-      },
-    }),
+    // viteVConsole({
+    //   entry: path.resolve("src/main.ts"),
+    //   localEnabled: true,
+    //   enabled: true,
+    //   config: {
+    //     log: {
+    //       maxLogNumber: 1000,
+    //     },
+    //     theme: "dark",
+    //   },
+    // }),
 
     // https://github.com/posva/unplugin-vue-router
     VueRouter(),
