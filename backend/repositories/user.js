@@ -12,7 +12,7 @@ exports.getUserLeaderboard = async () => {
       u.check_in_date,
       u.check_out_date,
       u.personality,
-      SUM(q.reward) AS total_xp
+      COALESCE(SUM(q.reward), 0) AS total_xp
       FROM users u
       LEFT JOIN user_quests uq ON u.id = uq.user_id
       LEFT JOIN quests q ON uq.quest_id = q.id
