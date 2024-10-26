@@ -7,6 +7,7 @@ exports.generate = async (req) => {
 
   try {
     const qrCodeUrl = await QRCode.toDataURL(`email:${email}`);
+    // const qrCodeUrl = await QRCode.toDataURL(`https://www.linkedin.com/in/samuelgirsang/`);
 
     return { message: "QR code generated successfully", data: qrCodeUrl };
   } catch (err) {
