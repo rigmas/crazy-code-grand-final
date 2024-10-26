@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const { closePool } = require('./repositories')
 const qrControllers = require('./controllers/qr');
@@ -10,7 +11,13 @@ const questControllers = require('./controllers/quest');
 const userControllers = require('./controllers/user');
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: "*",
+};
+
+app.use(cors(corsOptions));
+app.use(bodyParser.json({ limit: '100mb' }));
 app.use(express.json());
 
 const port = process.env.PORT || 8989;
@@ -70,6 +77,18 @@ app.get('/api/quests', async (req, res) => {
 app.post('/api/quests', async (req, res) => {
   questControllers.addQuest(req)
     .then(resp => res.status(200).json(resp))
+    .catch(err => res.status(500).json(err))
+})
+
+app.put('/api/quests/:quest_id/mindfile', async (req, res) => {
+  questControllers.updateQuestMindFile(req)
+    .then(resp => res.status(200).json(resp))
+    .catch(err => res.status(500).json(err))
+})
+
+app.get('/api/quests/:quest_id/mindfile', async (req, res) => {
+  questControllers.getQuestMindFile(req)
+    .then(resp => res.send(resp))
     .catch(err => res.status(500).json(err))
 })
 

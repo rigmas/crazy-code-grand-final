@@ -27,3 +27,8 @@ coverage/
 
 # Database
 migrate-table.sh
+
+# Mindfile
+public/uploads/*
+!public/uploads/
+!public/uploads/.gitkeep
