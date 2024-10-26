@@ -1,7 +1,7 @@
 lockfileVersion: '6.0'
 
 settings:
-  autoInstallPeers: true
+  autoInstallPeers: false
   excludeLinksFromLockfile: false
 
 dependencies:
@@ -13,7 +13,7 @@ dependencies:
     version: 11.1.0(vue@3.5.12)
   mind-ar:
     specifier: ^1.2.5
-    version: 1.2.5(seedrandom@3.0.5)(three@0.169.0)(vite@5.4.9)
+    version: 1.2.5(vite@5.4.9)
   vue:
     specifier: ^3.5.3
     version: 3.5.12(typescript@5.6.3)
@@ -24,7 +24,7 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config':
     specifier: ^3.4.0
-    version: 3.8.0(@typescript-eslint/utils@8.11.0)(@unocss/eslint-plugin@0.62.4)(@vue/compiler-sfc@3.5.12)(eslint-plugin-format@0.1.2)(eslint@9.13.0)(typescript@5.6.3)(vitest@2.1.3)
+    version: 3.8.0(@unocss/eslint-plugin@0.62.4)(eslint-plugin-format@0.1.2)(eslint@9.13.0)(typescript@5.6.3)(vitest@2.1.3)
   '@fontsource-variable/sen':
     specifier: ^5.1.0
     version: 5.1.0
@@ -55,9 +55,6 @@ devDependencies:
   '@vue/test-utils':
     specifier: ^2.4.6
     version: 2.4.6
-  '@zxing/browser':
-    specifier: ^0.1.5
-    version: 0.1.5(@zxing/library@0.21.3)
   aframe:
     specifier: ^1.6.0
     version: 1.6.0
@@ -99,7 +96,7 @@ devDependencies:
     version: 5.6.3
   unocss:
     specifier: ^0.62.3
-    version: 0.62.4(postcss@8.4.47)(vite@5.4.9)
+    version: 0.62.4(vite@5.4.9)
   unplugin-auto-import:
     specifier: ^0.18.2
     version: 0.18.3(@vueuse/core@11.1.0)
@@ -108,7 +105,7 @@ devDependencies:
     version: 0.27.4(vue@3.5.12)
   unplugin-vue-macros:
     specifier: ^2.11.8
-    version: 2.13.0(@vueuse/core@11.1.0)(esbuild@0.23.1)(typescript@5.6.3)(vite@5.4.9)(vue-tsc@2.1.6)(vue@3.5.12)
+    version: 2.13.0(@vueuse/core@11.1.0)(typescript@5.6.3)(vite@5.4.9)(vue-tsc@2.1.6)(vue@3.5.12)
   unplugin-vue-router:
     specifier: ^0.10.7
     version: 0.10.8(vue-router@4.4.5)(vue@3.5.12)
@@ -135,7 +132,7 @@ packages:
       '@jridgewell/trace-mapping': 0.3.25
     dev: true
 
-  /@antfu/eslint-config@3.8.0(@typescript-eslint/utils@8.11.0)(@unocss/eslint-plugin@0.62.4)(@vue/compiler-sfc@3.5.12)(eslint-plugin-format@0.1.2)(eslint@9.13.0)(typescript@5.6.3)(vitest@2.1.3):
+  /@antfu/eslint-config@3.8.0(@unocss/eslint-plugin@0.62.4)(eslint-plugin-format@0.1.2)(eslint@9.13.0)(typescript@5.6.3)(vitest@2.1.3):
     resolution: {integrity: sha512-O5QSufPHpKTm0wk1OQ5c2mOZVzCqYV3hIDrt5zt+cOWqiG8YXLPkSOD4fFwjomATtOuUbcLUwkcgY5dErM7aIw==}
     hasBin: true
     peerDependencies:
@@ -189,7 +186,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 8.11.0(@typescript-eslint/parser@8.11.0)(eslint@9.13.0)(typescript@5.6.3)
       '@typescript-eslint/parser': 8.11.0(eslint@9.13.0)(typescript@5.6.3)
       '@unocss/eslint-plugin': 0.62.4(eslint@9.13.0)(typescript@5.6.3)
-      '@vitest/eslint-plugin': 1.1.7(@typescript-eslint/utils@8.11.0)(eslint@9.13.0)(typescript@5.6.3)(vitest@2.1.3)
+      '@vitest/eslint-plugin': 1.1.7(eslint@9.13.0)(typescript@5.6.3)(vitest@2.1.3)
       eslint: 9.13.0
       eslint-config-flat-gitignore: 0.3.0(eslint@9.13.0)
       eslint-flat-config-utils: 0.4.0
@@ -209,7 +206,7 @@ packages:
       eslint-plugin-unused-imports: 4.1.4(@typescript-eslint/eslint-plugin@8.11.0)(eslint@9.13.0)
       eslint-plugin-vue: 9.29.1(eslint@9.13.0)
       eslint-plugin-yml: 1.14.0(eslint@9.13.0)
-      eslint-processor-vue-blocks: 0.1.2(@vue/compiler-sfc@3.5.12)(eslint@9.13.0)
+      eslint-processor-vue-blocks: 0.1.2(eslint@9.13.0)
       globals: 15.11.0
       jsonc-eslint-parser: 2.4.0
       local-pkg: 0.5.0
@@ -1255,7 +1252,7 @@ packages:
       - encoding
     dev: false
 
-  /@tensorflow/tfjs-data@4.22.0(@tensorflow/tfjs-core@4.22.0)(seedrandom@3.0.5):
+  /@tensorflow/tfjs-data@4.22.0(@tensorflow/tfjs-core@4.22.0):
     resolution: {integrity: sha512-dYmF3LihQIGvtgJrt382hSRH4S0QuAp2w1hXJI2+kOaEqo5HnUPG0k5KA6va+S1yUhx7UBToUKCBHeLHFQRV4w==}
     peerDependencies:
       '@tensorflow/tfjs-core': 4.22.0
@@ -1264,7 +1261,6 @@ packages:
       '@tensorflow/tfjs-core': 4.22.0
       '@types/node-fetch': 2.6.11
       node-fetch: 2.6.13
-      seedrandom: 3.0.5
       string_decoder: 1.3.0
     transitivePeerDependencies:
       - encoding
@@ -1278,7 +1274,7 @@ packages:
       '@tensorflow/tfjs-core': 4.22.0
     dev: false
 
-  /@tensorflow/tfjs@4.22.0(seedrandom@3.0.5):
+  /@tensorflow/tfjs@4.22.0:
     resolution: {integrity: sha512-0TrIrXs6/b7FLhLVNmfh8Sah6JgjBPH4mZ8JGb7NU6WW+cx00qK5BcAZxw7NCzxj6N8MRAIfHq+oNbPUNG5VAg==}
     hasBin: true
     dependencies:
@@ -1286,7 +1282,7 @@ packages:
       '@tensorflow/tfjs-backend-webgl': 4.22.0(@tensorflow/tfjs-core@4.22.0)
       '@tensorflow/tfjs-converter': 4.22.0(@tensorflow/tfjs-core@4.22.0)
       '@tensorflow/tfjs-core': 4.22.0
-      '@tensorflow/tfjs-data': 4.22.0(@tensorflow/tfjs-core@4.22.0)(seedrandom@3.0.5)
+      '@tensorflow/tfjs-data': 4.22.0(@tensorflow/tfjs-core@4.22.0)
       '@tensorflow/tfjs-layers': 4.22.0(@tensorflow/tfjs-core@4.22.0)
       argparse: 1.0.10
       chalk: 4.1.2
@@ -1629,11 +1625,9 @@ packages:
       sirv: 2.0.4
     dev: true
 
-  /@unocss/postcss@0.62.4(postcss@8.4.47):
+  /@unocss/postcss@0.62.4:
     resolution: {integrity: sha512-kWdHy7UsSP4bDu8I7sCKeO0VuzvVpNHmn2rifK5gNstUx5dZ1H/SoyXTHx5sKtgfZBRzdNXFu2nZ3PzYGvEFbw==}
     engines: {node: '>=14'}
-    peerDependencies:
-      postcss: ^8.4.21
     dependencies:
       '@unocss/config': 0.62.4
       '@unocss/core': 0.62.4
@@ -1795,7 +1789,7 @@ packages:
       vue: 3.5.12(typescript@5.6.3)
     dev: true
 
-  /@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.11.0)(eslint@9.13.0)(typescript@5.6.3)(vitest@2.1.3):
+  /@vitest/eslint-plugin@1.1.7(eslint@9.13.0)(typescript@5.6.3)(vitest@2.1.3):
     resolution: {integrity: sha512-pTWGW3y6lH2ukCuuffpan6kFxG6nIuoesbhMiQxskyQMRcCN5t9SXsKrNHvEw3p8wcCsgJoRqFZVkOTn6TjclA==}
     peerDependencies:
       '@typescript-eslint/utils': '>= 8.0'
@@ -1808,7 +1802,6 @@ packages:
       vitest:
         optional: true
     dependencies:
-      '@typescript-eslint/utils': 8.11.0(eslint@9.13.0)(typescript@5.6.3)
       eslint: 9.13.0
       typescript: 5.6.3
       vitest: 2.1.3(@types/node@22.7.8)(jsdom@25.0.1)
@@ -1823,10 +1816,9 @@ packages:
       tinyrainbow: 1.2.0
     dev: true
 
-  /@vitest/mocker@2.1.3(@vitest/spy@2.1.3)(vite@5.4.9):
+  /@vitest/mocker@2.1.3(vite@5.4.9):
     resolution: {integrity: sha512-eSpdY/eJDuOvuTA3ASzCjdithHa+GIF1L4PqtEELl6Qa3XafdMLBpBlZCIUCX2J+Q6sNmjmxtosAG62fK4BlqQ==}
     peerDependencies:
-      '@vitest/spy': 2.1.3
       msw: ^2.3.5
       vite: ^5.0.0
     peerDependenciesMeta:
@@ -2535,31 +2527,6 @@ packages:
   /@webgpu/types@0.1.38:
     resolution: {integrity: sha512-7LrhVKz2PRh+DD7+S+PVaFd5HxaWQvoMqBbsV9fNJO1pjUs1P8bM2vQVNfk+3URTqbuTI7gkXi0rfsN0IadoBA==}
     dev: false
-
-  /@zxing/browser@0.1.5(@zxing/library@0.21.3):
-    resolution: {integrity: sha512-4Lmrn/il4+UNb87Gk8h1iWnhj39TASEHpd91CwwSJtY5u+wa0iH9qS0wNLAWbNVYXR66WmT5uiMhZ7oVTrKfxw==}
-    peerDependencies:
-      '@zxing/library': ^0.21.0
-    dependencies:
-      '@zxing/library': 0.21.3
-    optionalDependencies:
-      '@zxing/text-encoding': 0.9.0
-    dev: true
-
-  /@zxing/library@0.21.3:
-    resolution: {integrity: sha512-hZHqFe2JyH/ZxviJZosZjV+2s6EDSY0O24R+FQmlWZBZXP9IqMo7S3nb3+2LBWxodJQkSurdQGnqE7KXqrYgow==}
-    engines: {node: '>= 10.4.0'}
-    dependencies:
-      ts-custom-error: 3.3.1
-    optionalDependencies:
-      '@zxing/text-encoding': 0.9.0
-    dev: true
-
-  /@zxing/text-encoding@0.9.0:
-    resolution: {integrity: sha512-U/4aVJ2mxI0aDNI8Uq0wEhMgY+u4CNtEb0om3+y3+niDAsoTCOB33UF0sxpzqzdqXLqmvc+vZyAt4O8pPdfkwA==}
-    requiresBuild: true
-    dev: true
-    optional: true
 
   /abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -3705,13 +3672,12 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-processor-vue-blocks@0.1.2(@vue/compiler-sfc@3.5.12)(eslint@9.13.0):
+  /eslint-processor-vue-blocks@0.1.2(eslint@9.13.0):
     resolution: {integrity: sha512-PfpJ4uKHnqeL/fXUnzYkOax3aIenlwewXRX8jFinA1a2yCFnLgMuiH3xvCgvHHUlV2xJWQHbCTdiJWGwb3NqpQ==}
     peerDependencies:
       '@vue/compiler-sfc': ^3.3.0
       eslint: ^8.50.0 || ^9.0.0
     dependencies:
-      '@vue/compiler-sfc': 3.5.12
       eslint: 9.13.0
     dev: true
 
@@ -5265,7 +5231,7 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /mind-ar@1.2.5(seedrandom@3.0.5)(three@0.169.0)(vite@5.4.9):
+  /mind-ar@1.2.5(vite@5.4.9):
     resolution: {integrity: sha512-YsbiNYaNbI/AMSXYfL+c/vJaFD/RB8uKtAOhmMyOkGZ0vBnEM8+KPh3ee8BH35ldtVudziJpv62qqV6dns/Evw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -5273,13 +5239,12 @@ packages:
     dependencies:
       '@mediapipe/tasks-vision': 0.10.17
       '@msgpack/msgpack': 2.8.0
-      '@tensorflow/tfjs': 4.22.0(seedrandom@3.0.5)
+      '@tensorflow/tfjs': 4.22.0
       '@vitejs/plugin-basic-ssl': 1.1.0(vite@5.4.9)
       canvas: 2.11.2
       mathjs: 11.12.0
       ml-matrix: 6.12.0
       svd-js: 1.1.1
-      three: 0.169.0
       tinyqueue: 2.0.3
     transitivePeerDependencies:
       - encoding
@@ -6404,10 +6369,6 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
 
-  /three@0.169.0:
-    resolution: {integrity: sha512-Ed906MA3dR4TS5riErd4QBsRGPcx+HBDX2O5yYE5GqJeFQTPU+M56Va/f/Oph9X7uZo3W3o4l2ZhBZ6f6qUv0w==}
-    dev: false
-
   /tiny-emitter@2.1.0:
     resolution: {integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==}
     dev: false
@@ -6515,11 +6476,6 @@ packages:
       typescript: '>=4.2.0'
     dependencies:
       typescript: 5.6.3
-    dev: true
-
-  /ts-custom-error@3.3.1:
-    resolution: {integrity: sha512-5OX1tzOjxWEgsr/YEUWSuPrQ00deKLh6D7OTWcvNHm12/7QPyRh8SYpyWvA4IZv8H/+GQWQEh/kwo95Q9OVW1A==}
-    engines: {node: '>=14.0.0'}
     dev: true
 
   /tslib@2.8.0:
@@ -6644,7 +6600,7 @@ packages:
       unist-util-visit-parents: 6.0.1
     dev: true
 
-  /unocss@0.62.4(postcss@8.4.47)(vite@5.4.9):
+  /unocss@0.62.4(vite@5.4.9):
     resolution: {integrity: sha512-SaGbxXQkk8GDPeJpWsBCZ8a23Knu4ixVTt6pvcQWKjOCGTd9XBd+vLZzN2WwdwgBPVwmMmx5wp+/gPHKFNOmIw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -6659,7 +6615,7 @@ packages:
       '@unocss/astro': 0.62.4(vite@5.4.9)
       '@unocss/cli': 0.62.4
       '@unocss/core': 0.62.4
-      '@unocss/postcss': 0.62.4(postcss@8.4.47)
+      '@unocss/postcss': 0.62.4
       '@unocss/preset-attributify': 0.62.4
       '@unocss/preset-icons': 0.62.4
       '@unocss/preset-mini': 0.62.4
@@ -6675,7 +6631,6 @@ packages:
       '@unocss/vite': 0.62.4(vite@5.4.9)
       vite: 5.4.9(@types/node@22.7.8)
     transitivePeerDependencies:
-      - postcss
       - rollup
       - supports-color
     dev: true
@@ -6706,7 +6661,7 @@ packages:
       - webpack-sources
     dev: true
 
-  /unplugin-combine@1.0.3(esbuild@0.23.1)(vite@5.4.9):
+  /unplugin-combine@1.0.3(vite@5.4.9):
     resolution: {integrity: sha512-vCpXdYCTcGwRGv7iF/COh7dupqyIrRxwe5kTKF3ZiVnO4toyvU+tpoTj570Bf9SpJG4JspGnfjcZIU6SBIKryA==}
     engines: {node: '>=16.14.0'}
     peerDependencies:
@@ -6731,7 +6686,6 @@ packages:
         optional: true
     dependencies:
       '@antfu/utils': 0.7.10
-      esbuild: 0.23.1
       unplugin: 1.14.1
       vite: 5.4.9(@types/node@22.7.8)
     transitivePeerDependencies:
@@ -6781,7 +6735,7 @@ packages:
       - webpack-sources
     dev: true
 
-  /unplugin-vue-macros@2.13.0(@vueuse/core@11.1.0)(esbuild@0.23.1)(typescript@5.6.3)(vite@5.4.9)(vue-tsc@2.1.6)(vue@3.5.12):
+  /unplugin-vue-macros@2.13.0(@vueuse/core@11.1.0)(typescript@5.6.3)(vite@5.4.9)(vue-tsc@2.1.6)(vue@3.5.12):
     resolution: {integrity: sha512-lYy9eqs7MvMqY/AjHAsZnpJSt68u/QVF/KsB8Rv0wUUJQixew3oFlCsPUXt/+POuM/q/OGCNe6Z8r6vYIVskdw==}
     engines: {node: '>=16.14.0'}
     peerDependencies:
@@ -6817,7 +6771,7 @@ packages:
       '@vue-macros/short-vmodel': 1.5.2(vue@3.5.12)
       '@vue-macros/volar': 0.30.5(typescript@5.6.3)(vue-tsc@2.1.6)(vue@3.5.12)
       unplugin: 1.14.1
-      unplugin-combine: 1.0.3(esbuild@0.23.1)(vite@5.4.9)
+      unplugin-combine: 1.0.3(vite@5.4.9)
       unplugin-vue-define-options: 1.5.2(vue@3.5.12)
       vue: 3.5.12(typescript@5.6.3)
     transitivePeerDependencies:
@@ -7007,7 +6961,7 @@ packages:
     dependencies:
       '@types/node': 22.7.8
       '@vitest/expect': 2.1.3
-      '@vitest/mocker': 2.1.3(@vitest/spy@2.1.3)(vite@5.4.9)
+      '@vitest/mocker': 2.1.3(vite@5.4.9)
       '@vitest/pretty-format': 2.1.3
       '@vitest/runner': 2.1.3
       '@vitest/snapshot': 2.1.3
