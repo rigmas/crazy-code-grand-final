@@ -5,20 +5,6 @@ import { QuestDummyList } from "~/schemas/quest"
 import { getQuests } from "~/services/quest"
 import { useQuestStore } from "~/stores/quest.store"
 
-enum QuestType {
-  Question = "question",
-  Photo = "photo",
-}
-
-interface Quest {
-  id: number
-  type: QuestType
-  title: string
-  description: string
-  location: [number, number]
-  reward: string
-}
-
 const route = useRoute()
 const router = useRouter()
 const selectedId = get<number>(route.params, "id", 1)

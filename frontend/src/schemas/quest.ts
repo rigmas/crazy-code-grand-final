@@ -40,4 +40,15 @@ export const QuestDummyList: QuestDetail[] = [
     done: false,
     lon_lat: [0, 0],
   },
+  {
+    id: 3,
+    type: QuestType.Question,
+    title: "What life ?",
+    reward: 50,
+    description: "Is life truly a wonder, or but a fleeting illusion for the wandering soul? What drives thee to seek joy in a world veiled in sorrow and shadow? Tell me, traveler, what do you hope to find in this endless dance of despair and desire?",
+    objectives: [],
+    is_party: false,
+    done: false,
+    lon_lat: [0, 0],
+  },
 ]
