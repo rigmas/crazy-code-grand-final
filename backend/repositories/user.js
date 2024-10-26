@@ -1,5 +1,31 @@
 const db = require(".");
 
+exports.getUserLeaderboard = async () => {
+  try {
+    const res = await db.query(
+      `
+      SELECT
+      u.id AS user_id,
+      u.name,
+      u.email,
+      u.room_number,
+      u.check_in_date,
+      u.check_out_date,
+      u.personality,
+      SUM(q.reward) AS total_xp
+      FROM users u
+      LEFT JOIN user_quests uq ON u.id = uq.user_id
+      LEFT JOIN quests q ON uq.quest_id = q.id
+      GROUP BY u.id, u.name, u.email, u.room_number, u.check_in_date, u.check_out_date, u.personality
+      ORDER BY total_xp DESC
+      `
+    );
+    return res.rows;
+  } catch (err) {
+    throw err;
+  }
+}
+
 exports.getUserByEmail = async (email) => {
   try {
     const res = await db.query("SELECT * FROM users WHERE email = $1", [email]);
@@ -39,7 +65,7 @@ exports.insertUser = async (name, email, roomNumber, checkInDate, checkoutDate) 
   }
 }
 
-exports.insertUserQuest = async (userId, questId, isDone) => {
+exports.completeUserQuest = async (userId, questId, isDone) => {
   try {
     const res = await db.query(
       `
@@ -48,22 +74,6 @@ exports.insertUserQuest = async (userId, questId, isDone) => {
       RETURNING *
       `,
       [userId, questId, isDone]
-    );
-    return res.rows[0];
-  } catch (err) {
-    throw err;
-  }
-};
-
-exports.completeUserQuest = async (userId, questId, isDone) => {
-  try {
-    const res = await db.query(
-      `
-      UPDATE user_quests SET done = $1
-      WHERE user_id = $2 AND quest_id = $3
-      RETURNING *
-      `,
-      [isDone, userId, questId]
     );
     return res.rows[0];
   } catch (err) {

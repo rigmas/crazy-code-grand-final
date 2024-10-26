@@ -5,8 +5,9 @@ const userRepository = require("../repositories/user");
 exports.generate = async (req) => {
   const { email } = req.query;
 
+  const frontendBaseUrl = process.env.FRONTEND_BASE_URL;
   try {
-    const qrCodeUrl = await QRCode.toDataURL(`email:${email}`);
+    const qrCodeUrl = await QRCode.toDataURL(`${frontendBaseUrl}/login/${email}`);
 
     return { message: "QR code generated successfully", data: qrCodeUrl };
   } catch (err) {

@@ -1,16 +1,5 @@
 const userRepo = require("../repositories/user");
 
-exports.addNewUserQuest = async (req) => {
-  const { quest_id, user_id } = req.params
-  try {
-    const userQuest = await userRepo.insertUserQuest(user_id, quest_id, false);
-    return { message: "Add new user quest", data: userQuest };
-  } catch (err) {
-    console.error("quest::addNewUserQuest - err: ", err);
-    throw err;
-  }
-}
-
 exports.completeUserQuest = async (req) => {
   const { quest_id, user_id } = req.params
   try {
@@ -49,3 +38,13 @@ exports.addNewUser = async (req) => {
     res.status(500).json({ error: "Failed to add new user" });
   }
 };
+
+exports.getUserLeaderboard = async () => {
+  try {
+    const user = await userRepo.getUserLeaderboard();
+    return { message: "Get user leaderboard", data: user };
+  } catch (err) {
+    console.error("user::getUserLeaderboard - err: ", err);
+    throw err;
+  }
+}
