@@ -98,12 +98,12 @@ onMounted(() => {
       <div class="mb-2 h-[0.8rem] w-full flex overflow-hidden rounded-2xl">
         <div
           class="bg-[#db5a24]" :style="{
-            width: `calc(${userExp / 1000}%)`,
+            width: `calc(${100 * userExp / 1000}%)`,
           }"
         />
         <div
           class="bg-[#f8d2bd]" :style="{
-            width: `calc(${100 - (userExp / 1000)}%)`,
+            width: `calc(${100 - (100 * userExp / 1000)}%)`,
           }"
         />
       </div>

@@ -27,6 +27,7 @@ interface Quest {
 const route = useRoute()
 const router = useRouter()
 const selectedId = get<number>(route.params, "id", 1)
+const mindfile = `${import.meta.env.VITE_PUBLIC_API_URL}/api/quests/${selectedId}/mindfile`
 
 const sceneRef = ref<HTMLElement>()
 const arEntityRef = ref<HTMLElement>()
@@ -37,8 +38,15 @@ onBeforeUnmount(() => {
 
 const state = ref<"loading" | "scanning" | "found">("loading")
 
-const { user, userLevel } = storeToRefs(useAuthStore())
-const { quests, activeQuestIndex, activeQuest } = storeToRefs(useQuestStore())
+const {
+  user,
+  userLevel,
+} = storeToRefs(useAuthStore())
+const {
+  quests,
+  activeQuestIndex,
+  activeQuest,
+} = storeToRefs(useQuestStore())
 activeQuestIndex.value = selectedId - 1
 onBeforeMount(async () => {
   const res = await getQuests()
@@ -57,7 +65,12 @@ onMounted(async () => {
       await sleep(300)
       sceneRef.value?.systems["mindar-image-system"].pause()
       if (user.value != null) {
-        await finishQuest(selectedId, user.value.id)
+        try {
+          await finishQuest(selectedId, user.value.id)
+        }
+        catch (e) {
+          console.log("ignoring, been finished before")
+        }
       }
       await sleep(300)
       fireConfetti()
@@ -72,7 +85,11 @@ onMounted(async () => {
 <template>
   <div class="relative h-full w-full">
     <Transition name="van-slide-up" appear>
-      <div v-if="state === 'found'" class="absolute left-0 top-0 z-36 h-full w-full flex flex-col items-center justify-center text-3xl text-white font-semibold" style="background-color: rgba(219, 90, 36, 0.2);">
+      <div
+        v-if="state === 'found'"
+        class="absolute left-0 top-0 z-36 h-full w-full flex flex-col items-center justify-center text-3xl text-white font-semibold"
+        style="background-color: rgba(219, 90, 36, 0.2);"
+      >
         <div class="mb-2">
           Congratulation !
         </div>
@@ -102,10 +119,6 @@ onMounted(async () => {
         </div>
 
         <div>
-          <!--        <div -->
-          <!--          class="h-[3rem] w-[3rem]" -->
-          <!--          style="background: url(/lyf-logo.png)" -->
-          <!--        /> -->
           <img class="" src="/lyf-logo.png" width="28">
         </div>
       </div>
@@ -136,37 +149,48 @@ onMounted(async () => {
         id="ar-scene"
         ref="sceneRef"
         color-space="sRGB"
-        mindar-image="imageTargetSrc: /targets.mind; uiError:no; uiLoading:no; uiScanning:no"
+        :mindar-image="`imageTargetSrc: ${mindfile}; uiError:no; uiLoading:no; uiScanning:no`"
         vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false"
         renderer="colorManagement: true, physicallyCorrectLights"
       >
         <a-assets>
-          <img
-            id="card"
-            src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/card.png"
-            crossorigin="anonymous"
-          >
+          <!--          <img -->
+          <!--            id="card" -->
+          <!--            src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/card.png" -->
+          <!--            crossorigin="anonymous" -->
+          <!--          > -->
+          <!--          <a-asset-item -->
+          <!--            id="avatarModel" -->
+          <!--            src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/softmind/scene.gltf" -->
+          <!--            crossorigin -->
+          <!--          /> -->
           <a-asset-item
             id="avatarModel"
-            src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/softmind/scene.gltf"
+            src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/band-example/bear/scene.gltf"
             crossorigin
           />
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: true" />
         <a-entity ref="arEntityRef" mindar-image-target="targetIndex: 0">
-          <a-plane
-            src="#card"
-            position="0 0 0"
-            height="0.552"
-            width="1"
-            rotation="0 0 0"
-          />
+          <!--          <a-plane -->
+          <!--            src="#card" -->
+          <!--            position="0 0 0" -->
+          <!--            height="0.552" -->
+          <!--            width="1" -->
+          <!--            rotation="0 0 0" -->
+          <!--          /> -->
+          <!--          <a-gltf-model -->
+          <!--            rotation="0 0 0 " -->
+          <!--            position="0 0 0.1" -->
+          <!--            scale="0.005 0.005 0.005" -->
+          <!--            src="#avatarModel" -->
+          <!--            animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate" -->
+          <!--          /> -->
+
           <a-gltf-model
-            rotation="0 0 0 "
-            position="0 0 0.1"
-            scale="0.005 0.005 0.005"
+            rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05"
             src="#avatarModel"
             animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
           />

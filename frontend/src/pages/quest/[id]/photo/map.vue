@@ -3,6 +3,7 @@ import type { GeoJSONSource } from "maplibre-gl"
 import { Map as MglMap } from "maplibre-gl"
 import { storeToRefs } from "pinia"
 import { get } from "radash"
+import { addTargetMarker } from "~/pages/quest/[id]/photo/addTargetMarker"
 import { addUserMarker, UserMarkerLayerID } from "~/pages/quest/[id]/photo/addUserMarker"
 import { QuestDummyList } from "~/schemas/quest"
 import { getQuests } from "~/services/quest"
@@ -108,6 +109,16 @@ onMounted(() => {
 
   map.on("load", async () => {
     await addUserMarker(map)
+    await addTargetMarker(map, [{
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: activeQuest.value?.lon_lat ?? [0, 0],
+      },
+      properties: {
+        name: "Target",
+      },
+    }])
     resume()
     map.on("click", () => {
       showAction.value = true
@@ -120,6 +131,7 @@ onMounted(() => {
 
     map.setZoom(16)
     map.setCenter([coords.value.longitude, coords.value.latitude])
+    // map.setCenter(activeQuest.value?.lon_lat ?? [0, 0])
     map.setPitch(45)
   })
 })
@@ -168,7 +180,7 @@ onMounted(() => {
 
       <VanButton
         type="primary" class="w-full" round @click="() => {
-          router.push('/quest/1/photo/scan')
+          router.push(`/quest/${selectedId}/photo/scan`)
         }"
       >
         Go inside

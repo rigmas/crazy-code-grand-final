@@ -9,7 +9,7 @@ export const useAuthStore = defineStore("authStore", () => {
     if (userExp.value === 0) {
       return 1
     }
-    return Math.floor(userExp.value / 1000)
+    return Math.floor(userExp.value / 1000) + 1
   })
 
   function setUser(userData: User) {
