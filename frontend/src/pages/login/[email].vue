@@ -25,10 +25,11 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="flex justify-center p-8 flex-col text-center gap-10 items-center">
+  <div class="relative box-border h-full w-full flex flex-col items-center justify-center px-8">
     <div class="text-2xl text-primary font-semibold mt-8">Welcome to Lyf!</div>
     <img src="/boy-toss.png" alt="welcomeIMG" class="h-[270px] w-[270px] " />
-    <div class="text-lg mb-10"> Jump into a fun adventure! Make friends, grab cool gifts, and take on exciting
+    <div class="text-lg mb-10 text-center"> Jump into a fun adventure! Make friends, grab cool gifts, and take on
+      exciting
       quests as
       you
       explore all

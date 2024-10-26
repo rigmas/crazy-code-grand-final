@@ -46,24 +46,24 @@ const progressBarStyle = computed(() => {
 </script>
 
 <template>
-  <div class="flex justify-center p-8 flex-col text-center gap-5 items-center">
-    <div class="w-full h-4 bg-gray-200 rounded-full mt-3 mb-3">
+  <div class="relative box-border h-full w-full flex flex-col items-center justify-center px-8">
+    <div class="w-full h-4 bg-gray-200 rounded-full mt-3 mb-4">
       <div class="h-full bg-primary rounded-full" :style="progressBarStyle"></div>
     </div>
-    <div class="text-2xl text-primary font-bold">Let's Get to Know You!</div>
-    <div class="text-lg mb-1 text-gray-500">
+    <div class="text-2xl text-primary font-bold mb-5">Let's Get to Know You!</div>
+    <div class="text-center mb-6 text-gray-500">
       Answer these fun questions so we can customize your experience. Don't worry, there are no wrong answers!
     </div>
-    <div class="text-xl mb-2">
+    <div class="text-lg mb-3 text-center">
       {{ quizQuestions[currentQuestionIndex]?.question }}
     </div>
 
-    <div v-for="answer in quizQuestions[currentQuestionIndex]?.answers" :key="answer.id">
-      <van-button size="large" @click="submitAnswer(answer.id)" class="text-button-answer">
+    <div v-for="answer in quizQuestions[currentQuestionIndex]?.answers" :key="answer.id" class="mt-2">
+      <van-button @click="submitAnswer(answer.id)" class="text-button-answer">
         {{ answer.answer }}
       </van-button>
     </div>
-    <img class="ml-8 mt-5 h-[400px] w-[330px]" src="/boy-work.png">
+    <img class="ml-8 mt-5 h-[330px] w-[260px]" src="/boy-work.png">
   </div>
 </template>
 
