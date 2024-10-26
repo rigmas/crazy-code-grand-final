@@ -46,26 +46,24 @@ const progressBarStyle = computed(() => {
 </script>
 
 <template>
-  <div class="box-border flex flex-col items-center justify-center gap-5 text-center">
-    <div class="mb-3 mt-3 h-4 w-full rounded-full bg-gray-200">
-      <div class="bg-primary h-full rounded-full" :style="progressBarStyle" />
+  <div class="relative box-border h-full w-full flex flex-col items-center justify-center px-8">
+    <div class="w-full h-4 bg-gray-200 rounded-full mt-3 mb-4">
+      <div class="h-full bg-primary rounded-full" :style="progressBarStyle"></div>
     </div>
-    <div class="text-primary text-2xl font-bold">
-      Let's Get to Know You!
-    </div>
-    <div class="mb-1 text-lg text-gray-500">
+    <div class="text-2xl text-primary font-bold mb-5">Let's Get to Know You!</div>
+    <div class="text-center mb-6 text-gray-500">
       Answer these fun questions so we can customize your experience. Don't worry, there are no wrong answers!
     </div>
-    <div class="mb-2 text-xl">
+    <div class="text-lg mb-3 text-center">
       {{ quizQuestions[currentQuestionIndex]?.question }}
     </div>
 
-    <div v-for="answer in quizQuestions[currentQuestionIndex]?.answers" :key="answer.id">
-      <van-button size="large" class="text-button-answer" @click="submitAnswer(answer.id)">
+    <div v-for="answer in quizQuestions[currentQuestionIndex]?.answers" :key="answer.id" class="mt-2">
+      <van-button @click="submitAnswer(answer.id)" class="text-button-answer">
         {{ answer.answer }}
       </van-button>
     </div>
-    <img class="ml-8 mt-5 h-[400px] w-[330px]" src="/boy-work.png">
+    <img class="ml-8 mt-5 h-[330px] w-[260px]" src="/boy-work.png">
   </div>
 </template>
 
@@ -73,5 +71,6 @@ const progressBarStyle = computed(() => {
 .text-button-answer {
   text-align: left;
   padding: 1rem;
+  border: none;
 }
 </style>
