@@ -71,5 +71,6 @@ const progressBarStyle = computed(() => {
 .text-button-answer {
   text-align: left;
   padding: 1rem;
+  border: none;
 }
 </style>
