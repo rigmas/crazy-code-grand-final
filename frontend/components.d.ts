@@ -13,6 +13,7 @@ declare module 'vue' {
     TextButton: typeof import('./src/components/Common/TextButton.vue')['default']
     VanButton: typeof import('vant/es')['Button']
     VanConfigProvider: typeof import('vant/es')['ConfigProvider']
+    VanDialog: typeof import('vant/es')['Dialog']
     VanLoading: typeof import('vant/es')['Loading']
     VanOverlay: typeof import('vant/es')['Overlay']
   }

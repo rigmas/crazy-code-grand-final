@@ -7,3 +7,7 @@ export async function profileUsers(email: string) {
     body: { email },
   })
 }
+
+export async function getUserExp(userId: number) {
+  return await ofetch<{ data: { xp: string } | null }>(`${import.meta.env.VITE_PUBLIC_API_URL}/api/users/${userId}/xp`)
+}

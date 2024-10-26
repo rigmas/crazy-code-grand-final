@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { storeToRefs } from "pinia"
 import { useRoute, useRouter } from "vue-router"
 import { profileUsers } from "~/services/user"
 import { useAuthStore } from "~/stores/auth.store"
@@ -10,6 +11,7 @@ interface RouteParams {
 const route = useRoute()
 const router = useRouter()
 const path = route.params as RouteParams
+const { email } = storeToRefs(useAuthStore())
 const authStore = useAuthStore()
 
 function navigate() {
@@ -19,8 +21,11 @@ function navigate() {
 onMounted(async () => {
   const res = await profileUsers(path.email)
   if (res?.data) {
+    email.value = path.email
     authStore.setUser(res.data)
   }
+
+  navigate()
 })
 </script>
 
@@ -33,10 +38,11 @@ onMounted(async () => {
       quests as
       you
       explore all
-      around you.</div>
-    <van-button size="large" type="primary" @click="navigate">
+      around you.
+    </div>
+    <VanButton size="large" type="primary" round @click="navigate">
       Let's Go!
-    </van-button>
+    </VanButton>
     <img class="mt-15 h-[34px] w-[35px]" src="/lyf-logo-orange.png">
   </div>
 </template>
