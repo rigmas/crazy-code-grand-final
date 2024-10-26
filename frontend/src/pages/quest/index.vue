@@ -16,15 +16,13 @@ onMounted(async () => {
     ...res.data,
     ...QuestDummyList,
   ]
-
-  console.log(quests.value)
 })
 </script>
 
 <template>
   <div class="box-border h-full w-full px-8 md:px-0">
-    <div class="h-full w-full flex flex-col overflow-y-scroll">
-      <div class="mb-8 mt-24 text-center text-lg font-bold line-height-tight">
+    <div class="h-full w-full flex flex-col">
+      <div class="mb-8 mt-16 text-center text-lg font-bold line-height-tight">
         Complete fun quests to level up and earn rewards! Choose a solo quest or team up for a party quest.
       </div>
 
@@ -38,7 +36,7 @@ onMounted(async () => {
         </TextButton>
       </div>
 
-      <div class="h-33vh w-full">
+      <div class="h-33vh w-full overflow-y-auto">
         <div class="grid grid-cols-1 w-full gap-y-4 text-sm">
           <template v-for="(q, index) in quests" :key="q.title">
             <div class="bg-base van-haptics-feedback box-border w-full rounded-3xl px-4 py-4">
@@ -71,12 +69,16 @@ onMounted(async () => {
       </div>
 
       <div class="flex justify-center">
-        <img src="/boy-take-picture.png" alt="Boy Taking Picture" class="mb-4" width="250">
+        <img src="/boy-take-picture.png" alt="Boy Taking Picture" class="mb-12" width="220">
       </div>
 
       <div class="absolute bottom-5 left-0 w-full">
         <div class="w-full flex justify-center">
-          <TextButton>
+          <TextButton
+            @click="() => {
+              router.push('/home')
+            }"
+          >
             Back
           </TextButton>
         </div>

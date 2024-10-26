@@ -21,7 +21,7 @@ export interface QuestDetail extends Quest {
 
 export const QuestDummyList: QuestDetail[] = [
   {
-    id: 1,
+    id: 2,
     type: QuestType.Photo,
     title: "Visit the Café and Grab a Drink",
     reward: 50,
@@ -40,5 +40,4 @@ export const QuestDummyList: QuestDetail[] = [
     done: false,
     lon_lat: [0, 0],
   },
-
 ]

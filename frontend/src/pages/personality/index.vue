@@ -46,20 +46,22 @@ const progressBarStyle = computed(() => {
 </script>
 
 <template>
-  <div class="flex justify-center p-8 flex-col text-center gap-5 items-center">
-    <div class="w-full h-4 bg-gray-200 rounded-full mt-3 mb-3">
-      <div class="h-full bg-primary rounded-full" :style="progressBarStyle"></div>
+  <div class="box-border flex flex-col items-center justify-center gap-5 text-center">
+    <div class="mb-3 mt-3 h-4 w-full rounded-full bg-gray-200">
+      <div class="bg-primary h-full rounded-full" :style="progressBarStyle" />
     </div>
-    <div class="text-2xl text-primary font-bold">Let's Get to Know You!</div>
-    <div class="text-lg mb-1 text-gray-500">
+    <div class="text-primary text-2xl font-bold">
+      Let's Get to Know You!
+    </div>
+    <div class="mb-1 text-lg text-gray-500">
       Answer these fun questions so we can customize your experience. Don't worry, there are no wrong answers!
     </div>
-    <div class="text-xl mb-2">
+    <div class="mb-2 text-xl">
       {{ quizQuestions[currentQuestionIndex]?.question }}
     </div>
 
     <div v-for="answer in quizQuestions[currentQuestionIndex]?.answers" :key="answer.id">
-      <van-button size="large" @click="submitAnswer(answer.id)" class="text-button-answer">
+      <van-button size="large" class="text-button-answer" @click="submitAnswer(answer.id)">
         {{ answer.answer }}
       </van-button>
     </div>

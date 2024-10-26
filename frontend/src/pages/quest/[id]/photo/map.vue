@@ -109,6 +109,10 @@ onMounted(() => {
   map.on("load", async () => {
     await addUserMarker(map)
     resume()
+    map.on("click", () => {
+      showAction.value = true
+    })
+
     await until(coords).toMatch(({
       latitude,
       longitude,
@@ -117,10 +121,6 @@ onMounted(() => {
     map.setZoom(16)
     map.setCenter([coords.value.longitude, coords.value.latitude])
     map.setPitch(45)
-
-    map.on("click", () => {
-      showAction.value = true
-    })
   })
 })
 </script>
@@ -167,7 +167,7 @@ onMounted(() => {
       </div>
 
       <VanButton
-        type="primary" class="w-full" @click="() => {
+        type="primary" class="w-full" round @click="() => {
           router.push('/quest/1/photo/scan')
         }"
       >

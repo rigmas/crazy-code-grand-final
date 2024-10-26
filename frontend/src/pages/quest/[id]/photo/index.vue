@@ -37,17 +37,17 @@ onBeforeMount(async () => {
 
 <template>
   <div class="relative box-border h-full w-full flex flex-col px-4 md:px-0">
-    <div class="mt-16 w-full flex justify-center">
-      <img src="/boy-take-picture.png" width="226">
+    <div class="my-6 w-full flex justify-center">
+      <img src="/boy-take-picture.png" width="200">
     </div>
 
-    <div v-if="activeQuest != null" class="box-border w-full flex justify-center overflow-y-scroll pt-8" style="height: calc(100% - 200px);">
+    <div v-if="activeQuest != null" class="relative box-border w-full flex justify-center overflow-y-auto" style="height: calc(100% - 350px);">
       <div class="box-border h-full px-4 container md:px-0">
         <div class="text-primary mb-5 flex justify-center text-2xl font-bold">
           {{ activeQuest.title }}
         </div>
 
-        <div class="mb-8 min-h-[150px] w-full flex justify-center text-justify font-400">
+        <div class="mb-8 min-h-[100px] w-full flex justify-center text-justify font-400">
           {{ activeQuest.description }}
         </div>
 
@@ -66,12 +66,12 @@ onBeforeMount(async () => {
           Rewards
         </div>
         <div class="mb-8">
-          {{ activeQuest.reward }}
+          {{ activeQuest.reward }} XP
         </div>
       </div>
     </div>
 
-    <div class="bottom-bar">
+    <div class="bottom-bar w-full bg-[#fafafa]">
       <div
         class="w-full flex items-center justify-center text-gray"
         @click="() => {

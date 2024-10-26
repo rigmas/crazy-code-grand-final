@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia"
 import { get, sleep } from "radash"
+import { fireConfetti } from "~/pages/quest/[id]/photo/fireConfetti"
 import { QuestDummyList } from "~/schemas/quest"
-import { getQuests } from "~/services/quest"
+import { finishQuest, getQuests } from "~/services/quest"
+import { useAuthStore } from "~/stores/auth.store"
 import { useQuestStore } from "~/stores/quest.store"
 import "aframe"
 import "mind-ar/dist/mindar-image.prod.js"
@@ -35,6 +37,7 @@ onBeforeUnmount(() => {
 
 const state = ref<"loading" | "scanning" | "found">("loading")
 
+const { user, userLevel } = storeToRefs(useAuthStore())
 const { quests, activeQuestIndex, activeQuest } = storeToRefs(useQuestStore())
 activeQuestIndex.value = selectedId - 1
 onBeforeMount(async () => {
@@ -53,7 +56,11 @@ onMounted(async () => {
     arEntityRef.value?.addEventListener("targetFound", async (e) => {
       await sleep(300)
       sceneRef.value?.systems["mindar-image-system"].pause()
+      if (user.value != null) {
+        await finishQuest(selectedId, user.value.id)
+      }
       await sleep(300)
+      fireConfetti()
       state.value = "found"
     })
 
