@@ -134,7 +134,11 @@ onMounted(() => {
       <img class="absolute right-5" src="/boy-toss.png" width="90">
     </div>
 
-    <div class="menu-button van-haptics-feedback">
+    <div
+      class="menu-button van-haptics-feedback" @click="() => {
+        router.push('/home/leaderboard')
+      }"
+    >
       Leaderboards
       <!--      <img class="absolute right-5" src="/boy-take-picture.png" width="90"> -->
     </div>
