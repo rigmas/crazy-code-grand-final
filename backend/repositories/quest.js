@@ -19,7 +19,6 @@ exports.insertQuest = async (
   mindFile,
   lonLat
 ) => {
-  console.log({ lonLat })
   try {
     const res = await db.query(
       `
