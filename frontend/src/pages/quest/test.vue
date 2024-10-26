@@ -44,7 +44,7 @@ onBeforeUnmount(() => {
 })
 onMounted(async () => {
   await sleep(1000)
-  speak()
+  // speak()
 })
 </script>
 
@@ -54,9 +54,6 @@ onMounted(async () => {
     left-text="Back"
     left-arrow
     class="h-[50px]"
-    @click-left="() => {
-      router.push(`/quest/`)
-    }"
   />
 
   <div class="h-[calc(100% - 50px)] box-border w-full flex justify-center overflow-y-scroll pt-8" style="height: calc(100% - 50px);">

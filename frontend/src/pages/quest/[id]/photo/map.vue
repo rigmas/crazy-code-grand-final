@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import type { GeoJSONSource } from "maplibre-gl"
 import { Map as MglMap } from "maplibre-gl"
+import { storeToRefs } from "pinia"
 import { get } from "radash"
 import { addUserMarker, UserMarkerLayerID } from "~/pages/quest/[id]/photo/addUserMarker"
+import { QuestDummyList } from "~/schemas/quest"
+import { getQuests } from "~/services/quest"
+import { useQuestStore } from "~/stores/quest.store"
 
 enum QuestType {
   Question = "question",
@@ -21,14 +25,7 @@ interface Quest {
 const route = useRoute()
 const router = useRouter()
 const selectedId = get<number>(route.params, "id", 1)
-const selectedQuest = ref<Quest>({
-  id: 1,
-  type: QuestType.Photo,
-  title: "Finding life",
-  description: "In this labyrinth of endless life, thou shalt uncover the true meaning of existence, guided by the art of living itself",
-  location: [0, 0],
-  reward: "True meaning of life",
-})
+// const selectedQuest = ref<QuestDetail>(QuestDummyList[selectedId - 1])
 
 let map!: MglMap
 
@@ -43,7 +40,7 @@ const {
   immediate: true,
 })
 
-const showAction = ref(true)
+const showAction = ref(false)
 
 watchThrottled(coords, () => {
   const source = map.getSource(UserMarkerLayerID) as GeoJSONSource
@@ -62,6 +59,23 @@ watchThrottled(coords, () => {
     },
   })
 }, { throttle: 500 })
+
+onBeforeUnmount(() => {
+  if (map != null) {
+    map.remove()
+  }
+})
+
+const { quests, activeQuestIndex, activeQuest } = storeToRefs(useQuestStore())
+activeQuestIndex.value = selectedId - 1
+onBeforeMount(async () => {
+  const res = await getQuests()
+  quests.value = [
+    ...res.data,
+    ...QuestDummyList,
+  ]
+  activeQuestIndex.value = selectedId - 1
+})
 
 onMounted(() => {
   pause()
@@ -113,35 +127,54 @@ onMounted(() => {
 
 <template>
   <div class="relative h-full w-full">
-    <VanNavBar
-      :title="`Quest ${selectedQuest.title}`"
-      left-text="Back"
-      left-arrow
-      class="absolute top-0 h-[50px]"
-    />
+    <div class="bg-base absolute left-0 top-0 z-5 box-border w-full px-6 py-4 font-400 shadow-lg" style="border-bottom-left-radius: 1rem; border-bottom-right-radius: 1rem;">
+      <div class="text-primary mb-2 font-bold">
+        {{ activeQuest?.title }}
+      </div>
 
-    <div class="map--wrapper absolute top-[50px]">
+      <div class="text-sm">
+        {{ activeQuest?.description }}
+      </div>
+    </div>
+
+    <div class="map--wrapper absolute top-0">
       <div id="map" class="map h-full w-full" />
     </div>
 
-    <van-action-sheet v-model:show="showAction" title="" cancel-text="Cancel">
+    <div class="bg-base absolute bottom-0 box-border h-[80px] w-full flex items-center justify-between px-8 shadow-lg">
       <div
-        class="box-border w-full px-4 py-6 shadow-lg"
+        class="text-gray font-bold" @click="() => {
+          router.push('/quest')
+        }"
       >
-        <div class="mb-4 w-full text-lg">
-          You have arrived at the dungeion
-        </div>
-
-        <VanButton
-          type="default" class="w-full" @click="() => {
-            router.push('/quest/1/photo/scan')
-          }"
-        >
-          Go inside
-        </VanButton>
+        Back
       </div>
-    </van-action-sheet>
+      <div class="text-primary font-bold">
+        Find the location
+      </div>
+      <div>
+        <div class="i-solar:menu-dots-circle-linear text-xl text-gray" />
+      </div>
+    </div>
   </div>
+
+  <van-action-sheet v-model:show="showAction" title="" cancel-text="Cancel">
+    <div
+      class="box-border w-full px-4 py-6 shadow-lg"
+    >
+      <div class="mb-4 w-full text-lg">
+        You have arrived at the location
+      </div>
+
+      <VanButton
+        type="primary" class="w-full" @click="() => {
+          router.push('/quest/1/photo/scan')
+        }"
+      >
+        Go inside
+      </VanButton>
+    </div>
+  </van-action-sheet>
 </template>
 
 <style>

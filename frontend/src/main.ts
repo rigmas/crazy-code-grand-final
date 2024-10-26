@@ -1,3 +1,4 @@
+import NProgress from "nprogress"
 import { createPinia } from "pinia"
 import { createApp } from "vue"
 import { createRouter, createWebHistory } from "vue-router"
@@ -17,4 +18,12 @@ const pinia = createPinia()
 app.use(pinia)
 
 app.use(router)
+router.beforeEach((to, from) => {
+  if (to.path !== from.path) {
+    NProgress.start()
+  }
+})
+router.afterEach(() => {
+  NProgress.done()
+})
 app.mount("#app")
