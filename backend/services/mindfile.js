@@ -15,9 +15,7 @@ exports.uploadFileBase64 = (name, content, extension) => {
 }
 
 exports.readFileBinary = (filePath) => {
-  console.log('==>', filePath)
   const fileBuffer = fs.readFileSync(filePath)
-  console.log('==>', fileBuffer)
   return fileBuffer
 }
 
