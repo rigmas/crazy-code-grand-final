@@ -54,6 +54,12 @@ app.get('/api/quests', async (req, res) => {
     .catch(err => res.status(500).json(err))
 })
 
+app.post('/api/quests', async (req, res) => {
+  questControllers.addQuest(req)
+    .then(resp => res.status(200).json(resp))
+    .catch(err => res.status(500).json(err))
+})
+
 app.post('/api/users', async (req, res) => {
   userControllers.addNewUser(req)
     .then(resp => res.status(200).json(resp))

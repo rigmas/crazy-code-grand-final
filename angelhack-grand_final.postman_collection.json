@@ -502,12 +502,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8989/api/quests",
-					"protocol": "http",
+					"raw": "https://crazy-code.samuelgrs.com/api/quests",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"crazy-code",
+						"samuelgrs",
+						"com"
 					],
-					"port": "8989",
 					"path": [
 						"api",
 						"quests"
@@ -990,6 +991,103 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"message\": \"Add new user\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"sahit\",\n        \"email\": \"sahitono@gmail.com\",\n        \"room_number\": \"B13232\",\n        \"personality\": null,\n        \"check_in_date\": \"2024-10-25T04:30:02.468Z\",\n        \"check_out_date\": \"2024-10-28T04:30:02.468Z\",\n        \"created_at\": \"2024-10-26T03:43:12.264Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Quest - Insert new (just for seeding quest data)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"photo\",\n    \"title\": \"find gems\",\n    \"reward\": 500,\n    \"is_party\": false,\n    \"description\": \"find gems.\",\n    \"objectives\": [\n        \"Find the map\",\n        \"Retrieve the gems\"\n    ],\n    \"mind_file\": \"xxxx\",\n    \"lon_lat\": [\n        40.7128,\n        -74.0060\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/api/quests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"quests"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Quest - Insert new (just for seeding quest data)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"photo\",\n    \"title\": \"find gems\",\n    \"reward\": 500,\n    \"is_party\": false,\n    \"description\": \"find gems.\",\n    \"objectives\": [\n        \"Find the map\",\n        \"Retrieve the gems\"\n    ],\n    \"mind_file\": \"xxxx\",\n    \"lon_lat\": [\n        40.7128,\n        -74.0060\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8989/api/quests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"api",
+								"quests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "310"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"136-6UaZtO9+shqGRn85A1ggGjM4WCw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Oct 2024 06:19:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Quest added successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"type\": \"photo\",\n        \"title\": \"find gems\",\n        \"reward\": 500,\n        \"is_party\": false,\n        \"description\": \"find gems.\",\n        \"objectives\": [\n            \"Find the map\",\n            \"Retrieve the gems\"\n        ],\n        \"mind_file\": \"xxxx\",\n        \"lon_lat\": {\n            \"x\": 40.7128,\n            \"y\": -74.006\n        },\n        \"is_deleted\": false,\n        \"created_at\": \"2024-10-26T06:19:26.249Z\"\n    }\n}"
 				}
 			]
 		}
