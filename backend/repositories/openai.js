@@ -6,6 +6,7 @@ exports.generateText = async (prompt, role = "user") => {
   const response = await openai.chat.completions.create({
     messages: [{ role, content: prompt }],
     model: "gpt-4o",
+    temperature: 0
   });
 
   return response.choices[0].message;
