@@ -586,7 +586,7 @@
 			]
 		},
 		{
-			"name": "Quests - Add new user quest",
+			"name": "NOT USED ANYMORE",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -600,16 +600,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8989/api/users/1/quests/1",
-					"protocol": "http",
+					"raw": "https://crazy-code.samuelgrs.com/api/users/6/quests/1",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"crazy-code",
+						"samuelgrs",
+						"com"
 					],
-					"port": "8989",
 					"path": [
 						"api",
 						"users",
-						"1",
+						"6",
 						"quests",
 						"1"
 					]
@@ -703,16 +704,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8989/api/users/1/quests/1/done",
-					"protocol": "http",
+					"raw": "https://crazy-code.samuelgrs.com/api/users/6/quests/1/done",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"crazy-code",
+						"samuelgrs",
+						"com"
 					],
-					"port": "8989",
 					"path": [
 						"api",
 						"users",
-						"1",
+						"6",
 						"quests",
 						"1",
 						"done"
@@ -811,16 +813,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8989/api/users/1/xp",
-					"protocol": "http",
+					"raw": "https://crazy-code.samuelgrs.com/api/users/6/xp",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"crazy-code",
+						"samuelgrs",
+						"com"
 					],
-					"port": "8989",
 					"path": [
 						"api",
 						"users",
-						"1",
+						"6",
 						"xp"
 					]
 				}
@@ -904,7 +907,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"sahit\",\n    \"email\": \"sahitono@gmail.com\",\n    \"room_number\": \"B13232\",\n    \"check_in_date\": \"2024-10-25 11:30:02.468+00\",\n    \"check_out_date\": \"2024-10-28 11:30:02.468+00\"\n}",
+					"raw": "{\n    \"name\": \"testing`\",\n    \"email\": \"testing`@gmail.com\",\n    \"room_number\": \"ASSDD\",\n    \"check_in_date\": \"2024-10-25 11:30:02.468+00\",\n    \"check_out_date\": \"2024-10-28 11:30:02.468+00\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -912,12 +915,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8989/api/users",
-					"protocol": "http",
+					"raw": "https://crazy-code.samuelgrs.com/api/users",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"crazy-code",
+						"samuelgrs",
+						"com"
 					],
-					"port": "8989",
 					"path": [
 						"api",
 						"users"
@@ -991,6 +995,71 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"message\": \"Add new user\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"sahit\",\n        \"email\": \"sahitono@gmail.com\",\n        \"room_number\": \"B13232\",\n        \"personality\": null,\n        \"check_in_date\": \"2024-10-25T04:30:02.468Z\",\n        \"check_out_date\": \"2024-10-28T04:30:02.468Z\",\n        \"created_at\": \"2024-10-26T03:43:12.264Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "User - List leaderboard",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User - Insert new (just for seeding user data)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8989/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"_postman_previewlanguage": "",
+					"header": "",
+					"cookie": [],
+					"body": ""
 				}
 			]
 		},

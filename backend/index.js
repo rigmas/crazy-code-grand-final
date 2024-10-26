@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
+const { closePool } = require('./repositories')
 const qrControllers = require('./controllers/qr');
 const quizControllers = require('./controllers/quiz');
 const questControllers = require('./controllers/quest');
@@ -72,8 +73,6 @@ app.post('/api/quests', async (req, res) => {
     .catch(err => res.status(500).json(err))
 })
 
-// app.post('/api/')
-
 /**
  * User api
  */
@@ -105,3 +104,13 @@ app.post('/api/users/:user_id/quests/:quest_id/done', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on PORT: ${port}`);
 });
+
+process.on('SIGTERM', () => {
+  closePool();
+  process.exit(0);
+})
+
+process.on('SIGINT', () => {
+  closePool();
+  process.exit(0);
+})
