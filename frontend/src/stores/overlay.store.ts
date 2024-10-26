@@ -17,7 +17,7 @@ export const useOverlay = defineStore("overlayStore", () => {
 
     visible.value = true
   }
-  const hide = () => { visible.value = true }
+  const hide = () => { visible.value = false }
   const setMessage = (msg: string) => {
     message.value = msg
   }
