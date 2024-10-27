@@ -17,3 +17,11 @@ You can also add file for alter the table in this folder
 3. For seeding data, please add on folder backend/db/seed-table
 insert-users.sql
 INSERT INTO users (name, email, room_number, check_in_date, check_out_date, created_at) VALUES ('Samuel', 'samuel@gmail.com', 'A-403', '1729436595018', '1729436658713', CURRENT_TIMESTAMP);
+
+
+
+
+Execution
+psql -h localhost -p 5432 -U crazy_code_app -d crazy_code -f db/migrate-table/6-create-table-quest.sql
+
+psql -h localhost -p 5432 -U crazy_code_app -d crazy_code -f db/seed-table/3-seed-quests.sql

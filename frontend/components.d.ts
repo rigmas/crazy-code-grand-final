@@ -7,15 +7,15 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    MindArViewer: typeof import('./src/components/MindArViewer.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TextButton: typeof import('./src/components/Common/TextButton.vue')['default']
     VanActionSheet: typeof import('vant/es')['ActionSheet']
     VanButton: typeof import('vant/es')['Button']
-    VanCellGroup: typeof import('vant/es')['CellGroup']
     VanConfigProvider: typeof import('vant/es')['ConfigProvider']
-    VanField: typeof import('vant/es')['Field']
+    VanDialog: typeof import('vant/es')['Dialog']
     VanLoading: typeof import('vant/es')['Loading']
-    VanNavBar: typeof import('vant/es')['NavBar']
     VanOverlay: typeof import('vant/es')['Overlay']
   }
 }

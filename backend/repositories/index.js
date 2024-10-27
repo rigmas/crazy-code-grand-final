@@ -20,15 +20,15 @@ async function query(text, params) {
   }
 }
 
-function closePool() {
+async function closePool() {
   return pool
     .end()
     .then(() => console.log("Database pool closed"))
-    .catch((err) => console.error("Error closing database pool", err));
+    .catch((err) => {
+      console.error("Error closing database pool", err)
+      process.exit(1);
+    });
 }
-
-process.on("SIGTERM", closePool);
-process.on("SIGINT", closePool);
 
 module.exports = {
   query,

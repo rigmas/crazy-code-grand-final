@@ -1,66 +1,87 @@
 <script setup lang="ts">
+import { storeToRefs } from "pinia"
+import TextButton from "~/components/Common/TextButton.vue"
+import { QuestDummyList, QuestType } from "~/schemas/quest"
+import { getQuests } from "~/services/quest"
+import { useQuestStore } from "~/stores/quest.store"
+
 const router = useRouter()
-enum QuestType {
-  Question = "question",
-  Photo = "photo",
-}
+// const quests = ref(QuestDummyList)
 
-interface QuestList {
-  id: number
-  type: QuestType
-  title: string
-  reward: string
-}
+const { quests, activeQuestIndex } = storeToRefs(useQuestStore())
 
-const quests = ref<QuestList[]>([
-  {
-    id: 1,
-    type: QuestType.Question,
-    title: "Question 1",
-    reward: "30 exp",
-  },
-  {
-    id: 2,
-    type: QuestType.Photo,
-    title: "Photo 1",
-    reward: "30 exp & voucher",
-  },
-])
+onMounted(async () => {
+  const res = await getQuests()
+  quests.value = [
+    ...res.data,
+    ...QuestDummyList,
+  ]
+})
 </script>
 
 <template>
-  <VanNavBar
-    title="Quest List"
-    left-text="Back"
-    left-arrow
-    class="mb-8"
-  />
+  <div class="box-border h-full w-full px-8 md:px-0">
+    <div class="h-full w-full flex flex-col">
+      <div class="mb-8 mt-16 text-center text-lg font-bold line-height-tight">
+        Complete fun quests to level up and earn rewards! Choose a solo quest or team up for a party quest.
+      </div>
 
-  <div class="h-full w-full flex justify-center overflow-y-scroll">
-    <div class="h-full container">
-      <div class="grid grid-cols-1 w-full gap-y-4">
-        <template v-for="q in quests" :key="q.title">
-          <div class="bg-base van-haptics-feedback box-border w-full rounded-xl px-4 py-4">
-            <div
-              class="mb-2 w-full flex justify-between" @click="() => {
-                if (q.type === QuestType.Question) {
-                  router.push(`/quest/${q.id}/question`)
-                }
-                else {
-                  router.push(`/quest/${q.id}/photo`)
-                }
+      <div class="grid grid-cols-2 mb-12 box-border w-full gap-x-8">
+        <VanButton type="primary" size="large" class="font-bold !rounded-xl !text-lg">
+          Solo Quest
+        </VanButton>
 
-              }"
-            >
-              <div>{{ q.title }}</div>
-              <div>{{ q.type }}</div>
+        <TextButton class="w-full flex items-center justify-center">
+          Party Quest
+        </TextButton>
+      </div>
+
+      <div class="h-33vh w-full overflow-y-auto">
+        <div class="grid grid-cols-1 w-full gap-y-4 text-sm">
+          <template v-for="(q, index) in quests" :key="q.title">
+            <div class="bg-base van-haptics-feedback box-border w-full rounded-3xl px-4 py-4">
+              <div
+                class="w-full flex justify-between" @click="() => {
+                  if (q.type === QuestType.Question) {
+                    router.push(`/quest/${q.id}/question`)
+                  }
+                  else {
+                    router.push(`/quest/${q.id}/photo`)
+                  }
+
+                  activeQuestIndex = index
+                }"
+              >
+                <div class="flex font-bold" :class="q.done ? 'text-primary' : ''">
+                  <div v-if="q.done" class="i-solar:check-circle-bold text-primary mr-1" />
+                  <template v-else>
+                    <div v-if="q.type === QuestType.Question" class="i-solar:question-circle-bold text-primary mr-1" />
+                    <div v-else class="i-solar:camera-bold text-primary mr-1" />
+                  </template>
+
+                  {{ q.title }}
+                </div>
+                <div>{{ q.reward }}</div>
+              </div>
             </div>
+          </template>
+        </div>
+      </div>
 
-            <div class="italic">
-              Reward: {{ q.reward }}
-            </div>
-          </div>
-        </template>
+      <div class="flex justify-center">
+        <img src="/boy-take-picture.png" alt="Boy Taking Picture" class="mb-12" width="220">
+      </div>
+
+      <div class="absolute bottom-5 left-0 w-full">
+        <div class="w-full flex justify-center">
+          <TextButton
+            @click="() => {
+              router.push('/home')
+            }"
+          >
+            Back
+          </TextButton>
+        </div>
       </div>
     </div>
   </div>

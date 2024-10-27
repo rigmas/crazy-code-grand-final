@@ -1,7 +1,20 @@
 import { defineStore } from "pinia"
+import type { User } from "~/schemas/user"
 
 export const useAuthStore = defineStore("authStore", () => {
-  const authToken = useStorage<string | undefined>("token", undefined)
+  const email = useLocalStorage<string | undefined>("ccgf:email", "samueelgrs@gmail.com")
+  const user = useLocalStorage<User | undefined>("ccgf:user", undefined)
+  const userExp = ref(0)
+  const userLevel = computed(() => {
+    if (userExp.value === 0) {
+      return 1
+    }
+    return Math.floor(userExp.value / 1000) + 1
+  })
 
-  return { auth: authToken }
+  function setUser(userData: User) {
+    user.value = userData
+  }
+
+  return { email, user, setUser, userExp, userLevel }
 })
