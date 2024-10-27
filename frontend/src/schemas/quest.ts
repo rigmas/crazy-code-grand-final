@@ -1,6 +1,7 @@
 export enum QuestType {
   Question = "question",
   Photo = "photo",
+  Special = "special",
 }
 
 export interface Quest {

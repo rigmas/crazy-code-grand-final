@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia"
+import { useRouter } from "vue-router"
 import TextButton from "~/components/Common/TextButton.vue"
 import { QuestDummyList, QuestType } from "~/schemas/quest"
 import { getQuests } from "~/services/quest"
@@ -9,6 +10,10 @@ const router = useRouter()
 // const quests = ref(QuestDummyList)
 
 const { quests, activeQuestIndex } = storeToRefs(useQuestStore())
+
+function navigate() {
+  router.push("/quest/special-quest")
+}
 
 onMounted(async () => {
   const res = await getQuests()
@@ -26,6 +31,12 @@ onMounted(async () => {
         Complete fun quests to level up and earn rewards! Choose a solo quest or team up for a party quest.
       </div>
 
+      <div class="w-full mb-6">
+        <VanButton type="primary" size="large" class="font-bold !rounded-xl !text-lg" @click="navigate">
+          Special Quest
+        </VanButton>
+      </div>
+
       <div class="grid grid-cols-2 mb-12 box-border w-full gap-x-8">
         <VanButton type="primary" size="large" class="font-bold !rounded-xl !text-lg">
           Solo Quest
@@ -38,20 +49,18 @@ onMounted(async () => {
 
       <div class="h-33vh w-full overflow-y-auto">
         <div class="grid grid-cols-1 w-full gap-y-4 text-sm">
-          <template v-for="(q, index) in quests" :key="q.title">
+          <template v-for="(q, index) in quests.filter(q => q.type !== QuestType.Special)" :key="q.title">
             <div class="bg-base van-haptics-feedback box-border w-full rounded-3xl px-4 py-4">
-              <div
-                class="w-full flex justify-between" @click="() => {
-                  if (q.type === QuestType.Question) {
-                    router.push(`/quest/${q.id}/question`)
-                  }
-                  else {
-                    router.push(`/quest/${q.id}/photo`)
-                  }
+              <div class="w-full flex justify-between" @click="() => {
+                if (q.type === QuestType.Question) {
+                  router.push(`/quest/${q.id}/question`)
+                }
+                else {
+                  router.push(`/quest/${q.id}/photo`)
+                }
 
-                  activeQuestIndex = index
-                }"
-              >
+                activeQuestIndex = index
+              }">
                 <div class="flex font-bold" :class="q.done ? 'text-primary' : ''">
                   <div v-if="q.done" class="i-solar:check-circle-bold text-primary mr-1" />
                   <template v-else>
@@ -74,11 +83,9 @@ onMounted(async () => {
 
       <div class="absolute bottom-5 left-0 w-full">
         <div class="w-full flex justify-center">
-          <TextButton
-            @click="() => {
-              router.push('/home')
-            }"
-          >
+          <TextButton @click="() => {
+            router.push('/home')
+          }">
             Back
           </TextButton>
         </div>
@@ -87,6 +94,4 @@ onMounted(async () => {
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -31,6 +31,7 @@ declare module 'vue-router/auto-routes' {
     '/quest/[id]/photo/map': RouteRecordInfo<'/quest/[id]/photo/map', '/quest/:id/photo/map', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/quest/[id]/photo/scan': RouteRecordInfo<'/quest/[id]/photo/scan', '/quest/:id/photo/scan', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/quest/[id]/question/': RouteRecordInfo<'/quest/[id]/question/', '/quest/:id/question', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/quest/special-quest/': RouteRecordInfo<'/quest/special-quest/', '/quest/special-quest', Record<never, never>, Record<never, never>>,
     '/quest/test': RouteRecordInfo<'/quest/test', '/quest/test', Record<never, never>, Record<never, never>>,
     '/welcome/': RouteRecordInfo<'/welcome/', '/welcome', Record<never, never>, Record<never, never>>,
   }
