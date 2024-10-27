@@ -33,12 +33,12 @@ onMounted(async () => {
 
       <div class="w-full mb-6">
         <VanButton type="primary" size="large" class="font-bold !rounded-xl !text-lg" @click="navigate">
-          Special Quest
+          Find Hidden Quest
         </VanButton>
       </div>
 
       <div class="grid grid-cols-2 mb-12 box-border w-full gap-x-8">
-        <VanButton type="primary" size="large" class="font-bold !rounded-xl !text-lg">
+        <VanButton size="large" class="font-bold !rounded-xl !text-lg">
           Solo Quest
         </VanButton>
 
@@ -50,7 +50,7 @@ onMounted(async () => {
       <div class="h-33vh w-full overflow-y-auto">
         <div class="grid grid-cols-1 w-full gap-y-4 text-sm">
           <template v-for="(q, index) in quests.filter(q => q.type !== QuestType.Special)" :key="q.title">
-            <div class="bg-base van-haptics-feedback box-border w-full rounded-3xl px-4 py-4">
+            <div class="bg-primary van-haptics-feedback box-border w-full rounded-3xl px-4 py-4">
               <div class="w-full flex justify-between" @click="() => {
                 if (q.type === QuestType.Question) {
                   router.push(`/quest/${q.id}/question`)
@@ -61,16 +61,16 @@ onMounted(async () => {
 
                 activeQuestIndex = index
               }">
-                <div class="flex font-bold" :class="q.done ? 'text-primary' : ''">
-                  <div v-if="q.done" class="i-solar:check-circle-bold text-primary mr-1" />
+                <div class="flex text-white font-bold" :class="q.done ? 'text-white' : ''">
+                  <div v-if="q.done" class="i-solar:check-circle-bold text-white mr-1" />
                   <template v-else>
-                    <div v-if="q.type === QuestType.Question" class="i-solar:question-circle-bold text-primary mr-1" />
-                    <div v-else class="i-solar:camera-bold text-primary mr-1" />
+                    <div v-if="q.type === QuestType.Question" class="i-solar:question-circle-bold text-white mr-1" />
+                    <div v-else class="i-solar:camera-bold text-white mr-1" />
                   </template>
 
                   {{ q.title }}
                 </div>
-                <div>{{ q.reward }}</div>
+                <div class="text-white">{{ q.reward }}</div>
               </div>
             </div>
           </template>

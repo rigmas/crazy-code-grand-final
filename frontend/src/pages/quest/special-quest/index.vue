@@ -58,7 +58,7 @@ onMounted(async () => {
         renderer="colorManagement: true, physicallyCorrectLights">
         <a-assets>
           <a-asset-item id="avatarModel"
-            src="https://cdn.jsdelivr.net/gh/rigmas/sandbox@main/removal-background_final.gltf" crossorigin />
+            src="https://cdn.jsdelivr.net/gh/rigmas/sandbox@main/picture1-removebg-preview.gltf" crossorigin />
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: true" />

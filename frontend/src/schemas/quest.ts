@@ -42,7 +42,7 @@ export const QuestDummyList: QuestDetail[] = [
   //   lon_lat: [0, 0],
   // },
   {
-    id: 3,
+    id: 4,
     type: QuestType.Question,
     title: "What life ?",
     reward: 50,
