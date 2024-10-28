@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { sleep } from "radash"
 import { fireConfetti } from "~/pages/quest/[id]/photo/fireConfetti"
+import { fireImages } from "."
 import "aframe"
 import "mind-ar/dist/mindar-image.prod.js"
 import "mind-ar/dist/mindar-image-aframe.prod.js"
@@ -25,6 +26,7 @@ onMounted(async () => {
       sceneRef.value?.systems["mindar-image-system"].pause()
 
       await sleep(300)
+      fireImages()
       fireConfetti()
       state.value = "found"
     })
@@ -131,6 +133,22 @@ onMounted(async () => {
 
   50% {
     top: calc(100% - 10px);
+  }
+}
+
+.floating-image {
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(360deg);
   }
 }
 </style>

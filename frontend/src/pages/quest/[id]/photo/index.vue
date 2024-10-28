@@ -27,7 +27,8 @@ onBeforeMount(async () => {
       <img src="/boy-take-picture.png" width="200">
     </div>
 
-    <div v-if="activeQuest != null" class="relative box-border w-full flex justify-center overflow-y-auto" style="height: calc(100% - 350px);">
+    <div v-if="activeQuest != null" class="relative box-border w-full flex justify-center overflow-y-auto"
+      style="height: calc(100% - 350px);">
       <div class="box-border h-full px-4 container md:px-0">
         <div class="text-primary mb-5 flex justify-center text-2xl font-bold">
           {{ activeQuest.title }}
@@ -58,28 +59,19 @@ onBeforeMount(async () => {
     </div>
 
     <div class="bottom-bar w-full bg-[#fafafa]">
-      <div
-        class="w-full flex items-center justify-center text-gray"
-        @click="() => {
-          router.push(`/quest`)
-        }"
-      >
+      <div class="w-full flex items-center justify-center text-gray" @click="() => {
+        router.push(`/quest`)
+      }">
         Back
       </div>
 
-      <van-button
-        type="primary"
-        class="!rounded-2xl"
-        @click="() => {
-          router.push(`/quest/${selectedId}/photo/map`)
-        }"
-      >
+      <van-button type="primary" class="!rounded-2xl" @click="() => {
+        router.push(`/quest/${selectedId}/photo/map`)
+      }">
         Start Quest Now
       </van-button>
     </div>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
