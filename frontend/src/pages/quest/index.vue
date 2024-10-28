@@ -53,6 +53,9 @@ onMounted(async () => {
             <div class="bg-primary van-haptics-feedback box-border w-full rounded-3xl px-4 py-4"
               :class="{ 'bg-gray-400': q.id === 1 }">
               <div class="w-full flex justify-between" @click="() => {
+                if (q.id === 1) {
+                  return
+                }
                 if (q.type === QuestType.Question) {
                   router.push(`/quest/${q.id}/question`)
                 }
