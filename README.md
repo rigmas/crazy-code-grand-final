@@ -61,4 +61,5 @@ you can find by scan this QR code.
 ### QR code staging
 ![QR code staging](./docs/qr_staging.png)
 
+### QR code staging
 ![QR code production](./docs/qr_production.png)
