@@ -1,8 +1,10 @@
 # << PROJECT NAME >>
 
 ## Overview
-...
-...
+The Project Lyf web app offers a gamified experience that turns each stay into an adventure, enhancing both guest satisfaction and loyalty. Upon first time onboarding, guests answer a few fun trivia questions, enabling the app to customize quests based on their interests and personality. They can then embark on solo or group quests, such as finding specific people, exploring unique places, or trying new activities. Additionally, hidden quests unlock through AR scans on objects in guest rooms or common areas, revealing exclusive challenges in augmented reality. By creating memorable and personalized experiences, Lyf fosters deeper connections with its guests, encouraging them to return and share their unique experiences, thus building long-term loyalty and enhancing brand satisfaction
+
+
+Project Lyf directly supports Lyf’s vision of experience-led social living and addresses their expansion goals. By gamifying the guest experience through personalized quests and AR-enabled hidden challenges, the app encourages meaningful exploration, connection, and interaction among guests, embodying Lyf’s core values of curiosity, togetherness, and freedom. This approach helps standardize Lyf’s guest experience in a unique way, offering a distinctive “Lyf Adventure” no matter the property location. As Lyf grows to 150 properties by 2030, this gamified, experience-focused app ensures a consistent yet personalized guest journey, enhancing satisfaction, encouraging repeat visits, and strengthening loyalty.
 
 ![Application architeture](./docs/design_system.png)
 
