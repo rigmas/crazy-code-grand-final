@@ -37,7 +37,7 @@ onMounted(async () => {
         </VanButton>
       </div>
 
-      <div class="grid grid-cols-2 mb-12 box-border w-full gap-x-8">
+      <div class="grid grid-cols-2 mb-6 box-border w-full gap-x-8">
         <VanButton size="large" class="font-bold !rounded-xl !text-lg">
           Solo Quest
         </VanButton>
