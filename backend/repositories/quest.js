@@ -2,7 +2,7 @@ const db = require(".");
 
 exports.getQuests = async () => {
   try {
-    const res = await db.query("SELECT * FROM quests");
+    const res = await db.query("SELECT * FROM quests ORDER BY id ASC");
     return res.rows;
   } catch (err) {
     throw err;
