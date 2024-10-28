@@ -47,10 +47,10 @@ onMounted(async () => {
         </TextButton>
       </div>
 
-      <div class="h-33vh w-full overflow-y-auto">
+      <div class="h-36vh w-full z-999">
         <div class="grid grid-cols-1 w-full gap-y-4 text-sm">
           <template v-for="(q, index) in quests.filter(q => q.type !== QuestType.Special)" :key="q.title">
-            <div class="bg-primary van-haptics-feedback box-border w-full rounded-3xl px-4 py-4"
+            <div class="bg-primary van-haptics-feedback box-border w-full rounded-3xl px-4 py-3"
               :class="{ 'bg-gray-400': q.id === 1 }">
               <div class="w-full flex justify-between" @click="() => {
                 if (q.id === 1) {

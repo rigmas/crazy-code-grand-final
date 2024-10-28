@@ -31,7 +31,7 @@ export function imagesVisitSwitch() {
 
 const imageMrSakai = "/find-mr-sakai.png"
 
-export function fireImages() {
+export function imagesMrSakai() {
   const existingImg = document.querySelector("img[data-fire-image]")
   if (existingImg) {
     existingImg.remove()

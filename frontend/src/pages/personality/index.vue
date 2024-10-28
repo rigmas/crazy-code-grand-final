@@ -47,14 +47,14 @@ const progressBarStyle = computed(() => {
 
 <template>
   <div class="relative box-border h-full w-full flex flex-col items-center justify-center px-8">
-    <div class="w-full h-4 bg-gray-200 rounded-full mt-3 mb-4">
+    <div class="w-full h-2 bg-gray-200 rounded-full mt-12 mb-4">
       <div class="h-full bg-primary rounded-full" :style="progressBarStyle"></div>
     </div>
-    <div class="text-2xl text-primary font-bold mb-5">Let's Get to Know You!</div>
-    <div class="text-center mb-6 text-gray-500">
+    <div class="text-xl text-primary font-bold mb-5">Let's Get to Know You!</div>
+    <div class="text-center mb-6 text-gray-500 text-sm">
       Answer these fun questions so we can customize your experience. Don't worry, there are no wrong answers!
     </div>
-    <div class="text-lg mb-3 text-center">
+    <div class="text-base mb-3 text-center">
       {{ quizQuestions[currentQuestionIndex]?.question }}
     </div>
 
@@ -63,7 +63,7 @@ const progressBarStyle = computed(() => {
         {{ answer.answer }}
       </van-button>
     </div>
-    <img class="ml-8 mt-5 h-[330px] w-[260px]" src="/boy-work.png">
+    <img class="ml-8 mt-5 h-[290px] w-[220px]" src="/boy-work.png">
   </div>
 </template>
 
