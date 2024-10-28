@@ -50,7 +50,8 @@ onMounted(async () => {
       <div class="h-33vh w-full overflow-y-auto">
         <div class="grid grid-cols-1 w-full gap-y-4 text-sm">
           <template v-for="(q, index) in quests.filter(q => q.type !== QuestType.Special)" :key="q.title">
-            <div class="bg-primary van-haptics-feedback box-border w-full rounded-3xl px-4 py-4">
+            <div class="bg-primary van-haptics-feedback box-border w-full rounded-3xl px-4 py-4"
+              :class="{ 'bg-gray-400': q.id === 1 }">
               <div class="w-full flex justify-between" @click="() => {
                 if (q.type === QuestType.Question) {
                   router.push(`/quest/${q.id}/question`)
@@ -61,7 +62,7 @@ onMounted(async () => {
 
                 activeQuestIndex = index
               }">
-                <div class="flex text-white font-bold" :class="q.done ? 'text-white' : ''">
+                <div class="flex text-white font-bold" :class="{ 'text-white': q.done, 'text-gray-500': q.id === 1 }">
                   <div v-if="q.done" class="i-solar:check-circle-bold text-white mr-1" />
                   <template v-else>
                     <div v-if="q.type === QuestType.Question" class="i-solar:question-circle-bold text-white mr-1" />
@@ -70,7 +71,8 @@ onMounted(async () => {
 
                   {{ q.title }}
                 </div>
-                <div class="text-white">{{ q.reward }}</div>
+                <div v-if="q.id === 1" class="i-solar:check-circle-bold text-white"></div>
+                <div v-else class="text-white">{{ q.reward }}</div>
               </div>
             </div>
           </template>
