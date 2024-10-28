@@ -13,10 +13,10 @@ function navigate() {
 <template>
   <div class="relative box-border h-full w-full flex flex-col items-center justify-center px-8"
     style="background-color: var(--van-primary-color)">
-    <div class="text-2xl font-semibold text-white mb-2">You're all set!</div>
-    <div class="text-4xl mb-2 font-semibold text-white text-center"> Welcome to Lyf, {{ user?.name }}!</div>
-    <img src="/boy-toss.png" alt="welcomeIMG" class="h-[380px] w-[380px] " />
-    <div class="text-2xl text-white text-center mb-6">Explore, play, and collect amazing gifts!</div>
+    <div class="text-xl font-semibold text-white mb-2">You're all set!</div>
+    <div class="text-2xl mb-2 font-semibold text-white text-center"> Welcome to Lyf, {{ user?.name }}!</div>
+    <img src="/boy-toss.png" alt="welcomeIMG" class="h-[300px] w-[300px] " />
+    <div class="text-xl text-white text-center mb-6">Explore, play, and collect amazing gifts!</div>
     <van-button size="large" @click="navigate">
       Personality Quiz
     </van-button>

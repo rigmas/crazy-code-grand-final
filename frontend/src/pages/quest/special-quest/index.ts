@@ -2,8 +2,14 @@ const imageUrl = "/find-mr-zhe.png"
 const defaults = { zIndex: 99999999 }
 
 export function fireImages() {
+  const existingImg = document.querySelector("img[data-fire-image]")
+  if (existingImg) {
+    existingImg.remove()
+  }
+
   const img = document.createElement("img")
   img.src = imageUrl
+  img.setAttribute("data-fire-image", "true")
   img.style.position = "fixed"
   img.style.zIndex = defaults.zIndex
   img.style.width = "95vw"
@@ -16,9 +22,9 @@ export function fireImages() {
   img.style.left = "50%"
   img.style.transform = "translate(-50%, -50%)"
 
-  document.body.appendChild(img)
-
-  setTimeout(() => {
+  img.onload = () => {
     img.style.opacity = "1"
-  }, 10)
+  }
+
+  document.body.appendChild(img)
 }
