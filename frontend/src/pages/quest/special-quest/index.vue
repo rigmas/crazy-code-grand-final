@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { sleep } from "radash"
 import { fireConfetti } from "~/pages/quest/[id]/photo/fireConfetti"
-import { imagesMrSakai } from ".."
+import { imagesVisitSwitch } from ".."
 import "aframe"
 import "mind-ar/dist/mindar-image.prod.js"
 import "mind-ar/dist/mindar-image-aframe.prod.js"
@@ -45,7 +45,7 @@ onMounted(async () => {
       sceneRef.value?.systems["mindar-image-system"].pause()
 
       await sleep(300)
-      imagesMrSakai()
+      imagesVisitSwitch()
       fireConfetti()
       state.value = "found"
     })
