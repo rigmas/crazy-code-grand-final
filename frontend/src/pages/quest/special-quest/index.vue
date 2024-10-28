@@ -8,8 +8,22 @@ import "mind-ar/dist/mindar-image-aframe.prod.js"
 
 const mindfile = `${import.meta.env.VITE_PUBLIC_API_URL}/api/quests/3/mindfile`
 
+const router = useRouter()
 const sceneRef = ref<HTMLElement>()
 const arEntityRef = ref<HTMLElement>()
+
+function removeImage() {
+  const img = document.querySelector("img[data-fire-image]")
+  if (img) {
+    img.remove()
+  }
+};
+
+function handleRouteChange(to, from) {
+  if (from.path === "/quest/special-quest") {
+    removeImage()
+  }
+};
 
 onBeforeUnmount(() => {
   sceneRef.value?.systems["mindar-image-system"].stop()
@@ -18,6 +32,11 @@ onBeforeUnmount(() => {
 const state = ref<"loading" | "scanning" | "found">("loading")
 
 onMounted(async () => {
+  router.beforeEach((to, from, next) => {
+    handleRouteChange(to, from)
+    next()
+  })
+
   sceneRef.value?.addEventListener("renderstart", async () => {
     state.value = "scanning"
 
@@ -70,6 +89,18 @@ onMounted(async () => {
             animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate" />
         </a-entity>
       </a-scene>
+    </div>
+
+    <div class="bg-base absolute bottom-0 z-10 box-border h-[80px] w-full flex items-center justify-between px-8">
+      <div class="text-gray font-bold" @click="() => {
+        console.log('back')
+        router.push('/quest')
+      }">
+        Back
+      </div>
+      <div>
+        <div class="i-solar:menu-dots-circle-linear text-xl text-gray" />
+      </div>
     </div>
   </div>
 </template>
