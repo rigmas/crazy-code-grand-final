@@ -48,6 +48,8 @@ The complete application is also deployed on a VPS for production purposes.
 
 3. Seed the quest and object model for detection [see setup guideline](./frontend/docs/USAGE.md)
 
+4. For the API docs, you can import the postman collection provided [postman collection](angelhack-grand_final.postman_collection.json)
+
 
 ## Deployment
 
